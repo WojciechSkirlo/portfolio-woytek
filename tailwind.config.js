@@ -11,11 +11,24 @@ module.exports = {
       colors: {
         "white": "#ffffff",
         "accent": {
-          dark: "#3dc1d3",
-          DEFAULT: "#3dc1d3"
+          'light': "#e9d5ff",
+          DEFAULT: "#d8b4fe"
         },
         grey: {
           DEFAULT: "",
+        }
+      },
+      animation: {
+        'bounce-right': 'bounce-right 0.8s infinite',
+      },
+      keyframes: {
+        'bounce-right': {
+          '0%, 100%': {
+            transform: 'translateX(25%)',
+          },
+          '50%': {
+            transform: 'translateX(0)',
+          },
         }
       },
       fontSize: {

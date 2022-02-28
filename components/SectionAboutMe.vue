@@ -6,11 +6,17 @@
         <h1 class="text-5xl font-medium leading-tight text-left mb-7">{{ aboutMe.title }}</h1>
         <p v-for="item in aboutMe.description" class="mb-6 font-extralight text-stone-600 last:mb-0" :key="item.id">{{ item.paragraph }}</p>
       </div>
-      <div class="relative flex items-center self-center justify-around w-11/12 mt-12 h-96">
-        <div class="h-0.5 bg-emerald-200 w-full absolute top-1/2 -translate-y-1/2 left-0"></div>
-        <div v-for="(item, index) in timeLine" :key="item.id" class="h-2.5 w-2.5 bg-black relative z-10">
-          <div class="w-40 h-4 bg-stone-200" :class="index % 2 == 0 ? ['origin-top-left', '-rotate-90'] : ['origin-bottom-left', 'rotate-90']">
-            <span>2020 - Pierwszy komercyjny projekt</span>
+      <div class="relative flex items-center self-center justify-around w-full mt-12">
+        <div class="h-full w-0.5 bg-accent absolute top-0 left-1/2 -translate-x-1/2"></div>
+        <div class="relative z-10 flex flex-col items-center justify-center w-full h-full">
+          <div v-for="(item, index) in timeLine" :key="item.id" class="relative flex flex-col w-full mb-24 last:mb-12 first:mt-12">
+            <div class="absolute top-0 flex w-1/2 -translate-y-1/2" :class="index % 2 == 0 ? 'right-0' : 'left-0'">
+              <div
+                class="absolute top-1/2 w-2.5 h-2.5 bg-black -translate-y-1/2"
+                :class="index % 2 == 0 ? ['left-0', '-translate-x-1/2'] : ['right-0', 'translate-x-1/2']"
+              ></div>
+              <p class="w-full font-medium" :class="index % 2 == 0 ? ['ml-4', 'text-left'] : ['mr-4', 'text-right']">{{ item.description }}</p>
+            </div>
           </div>
         </div>
       </div>
@@ -42,17 +48,27 @@ export default {
         {
           id: 1,
           date: "2016",
-          description: "",
+          description: "2016 - Początek przygody z kodowaniem stron",
         },
         {
           id: 2,
           date: "2016",
-          description: "",
+          description: "2017 wrz - Rozpoczęcie nauki jako Technik Informatyk",
         },
         {
           id: 3,
           date: "2016",
-          description: "",
+          description: "2020 - Pierwszy komercyjny projekt",
+        },
+        {
+          id: 4,
+          date: "2016",
+          description: "2021 mar - Zdobycie certyfikatu EE.09",
+        },
+        {
+          id: 5,
+          date: "2016",
+          description: "2021 maj - Ukończnie technikum z wyróżnieniem",
         },
       ],
     };
