@@ -4,7 +4,7 @@
       <img
         :src="`/static/works/${item.img}`"
         :alt="item.name"
-        class="object-contain w-32 h-32 transition-transform duration-500 ease-in-out delay-200"
+        class="object-contain w-32 h-32 transition-transform duration-500 ease-in-out delay-300"
         :class="isInfo && ['scale-110']"
       />
     </div>
@@ -14,12 +14,12 @@
       @click="toggleInfo(false)"
     >
       <div class="flex flex-col items-center text-center">
-        <h3
-          class="px-4 py-2 text-lg font-light leading-none uppercase bg-white"
+        <div
+          class="px-3 py-1.5 text-lg font-light leading-none uppercase bg-white"
           :class="((item.hasOwnProperty('live') && item.live) || (item.hasOwnProperty('github') && item.github)) && 'mb-8'"
         >
-          {{ item.name }}
-        </h3>
+          <span class="font-medium text-transparent bg-clip-text bg-gradient-to-br from-accent to-accent-light">{{ item.name }}</span>
+        </div>
         <div class="flex flex-col items-center gap-4">
           <a :href="item.live" target="_blank" v-if="item.hasOwnProperty('live') && item.live" class="flex items-center">
             <span class="font-medium">Sprawdź Live</span>

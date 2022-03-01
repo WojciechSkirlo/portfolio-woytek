@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="antialiased">
     <Html lang="en-US">
       <Head>
         <Title>Woytek | Portfolio</Title>

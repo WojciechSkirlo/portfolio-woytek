@@ -7,7 +7,7 @@
       items-center
       justify-center
       px-2.5
-      pt-3.5
+      pt-3
       pb-2
       text-xs text-white
       uppercase
@@ -22,7 +22,7 @@
     "
   >
     <ArrowNarrowUpIcon class="w-3.5 h-3.5 fill-white" />
-    <span class="mt-2">to</span>
+    <span class="mt-1.5">to</span>
     <span>up</span>
   </div>
 </template>

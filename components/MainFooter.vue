@@ -17,7 +17,7 @@
             v-for="item in socialMedia"
             :key="item.id"
             :href="item.link"
-            class="flex items-center justify-center p-1.5 py-3.5 text-center bg-white relative group overflow-hidden"
+            class="flex items-center justify-center p-1 py-3.5 text-center bg-white relative group overflow-hidden"
           >
             <div class="absolute left-0 w-full h-full transition-all duration-500 bg-accent-light top-full group-hover:top-0"></div>
             <svg class="relative z-10 w-[18px] h-[18px] fill-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" v-html="item.icon"></svg>
