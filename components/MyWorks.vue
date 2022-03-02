@@ -4,12 +4,12 @@
       <img
         :src="`/static/works/${item.img}`"
         :alt="item.name"
-        class="object-contain w-32 h-32 transition-transform duration-500 ease-in-out delay-300"
-        :class="isInfo && ['scale-110']"
+        class="object-contain w-32 h-32 transition-transform duration-500 delay-300"
+        :class="isInfo && 'scale-110'"
       />
     </div>
     <div
-      class="absolute top-0 right-0 flex items-center justify-center w-full h-full p-4 transition-transform duration-500 ease-in-out translate-x-full bg-white  bg-opacity-30 backdrop-blur-md"
+      class="absolute top-0 right-0 flex items-center justify-center w-full h-full p-4 transition-transform duration-500 translate-x-full bg-white  bg-opacity-30 backdrop-blur-md"
       :class="isInfo ? 'translate-x-0' : 'translate-x-full'"
       @click="toggleInfo(false)"
     >
@@ -50,7 +50,6 @@
   </div>
 </template>
 <script>
-import { CursorClickIcon } from "@heroicons/vue/solid";
 export default {
   props: {
     item: {

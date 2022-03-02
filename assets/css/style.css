@@ -8,3 +8,7 @@ body {
   font-family: "Fira Sans", sans-serif;
   @apply text-base;
 }
+
+[v-cloak] {
+  display: none;
+}
