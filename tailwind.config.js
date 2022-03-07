@@ -6,6 +6,7 @@ module.exports = {
     "./plugins/**/*.{js,ts}",
     "./nuxt.config.{js,ts}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
@@ -14,8 +15,10 @@ module.exports = {
           'light': "#e9d5ff",
           DEFAULT: "#d8b4fe"
         },
-        grey: {
-          DEFAULT: "",
+        dark: {
+          neutral: "#18181b",
+          white: "#ffffff",
+          grey: "#e2e8f0",
         }
       },
       animation: {

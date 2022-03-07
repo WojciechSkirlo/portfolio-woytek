@@ -1,12 +1,12 @@
 <template>
-  <section class="w-full bg-white">
+  <section id="portfolio" class="w-full transition-colors duration-300 bg-white dark:bg-dark-neutral">
     <MainWrapper>
       <HeadingDefault class="mb-8" :center="true">Portfolio</HeadingDefault>
-      <p class="px-12 mb-5 text-sm text-center font-extralight">
+      <p class="px-12 mb-5 text-sm text-center transition-colors duration-300 font-extralight dark:text-dark-grey">
         Kliknij na pracę, aby poznać więcej szczegółów
         <CursorClickIcon class="inline-block w-4 h-4 ml-2" />
       </p>
-      <div class="flex flex-col w-full gap-5">
+      <div class="flex flex-wrap justify-center w-full gap-5">
         <MyWorks v-for="item in works" :key="item.id" :item="item" />
       </div>
     </MainWrapper>
@@ -24,7 +24,7 @@ export default {
           name: "projectq12",
           img: "thumbnail-projectq12.png",
           live: "http://projectq12.woytek.com.pl/home.php",
-          github: "https://github.com/",
+          github: "https://github.com/WojciechSkirlo/projectq12",
           techStack: [
             {
               id: 1,
@@ -52,8 +52,7 @@ export default {
           id: 2,
           name: "gmw-spaw",
           img: "thumbnail-gmwspaw.png",
-          live: "http://projectq12.woytek.com.pl/home.php",
-          github: "https://github.com/",
+          live: "https://gmw-spaw.com/",
           techStack: [
             {
               id: 1,
@@ -85,8 +84,7 @@ export default {
           id: 3,
           name: "bąbelkowe spa",
           img: "thumbnail-babelkowespa.png",
-          live: "http://projectq12.woytek.com.pl/home.php",
-          github: "https://github.com/",
+          live: "http://babelkowespa.pl/",
           techStack: [
             {
               id: 1,
@@ -114,8 +112,7 @@ export default {
           id: 4,
           name: "marc-verso",
           img: "thumbnail-marcverso.png",
-          live: "http://projectq12.woytek.com.pl/home.php",
-          github: "https://github.com/",
+          live: "https://marcverso.pl/",
           techStack: [
             {
               id: 1,
@@ -127,8 +124,7 @@ export default {
           id: 5,
           name: "najmcar",
           img: "thumbnail-najmcar.png",
-          live: "http://projectq12.woytek.com.pl/home.php",
-          github: "https://github.com/",
+          live: "http://najmcar.pl/",
           techStack: [
             {
               id: 1,
@@ -152,8 +148,8 @@ export default {
           id: 6,
           name: "portfolio",
           img: "thumbnail-woytek.png",
-          live: "http://projectq12.woytek.com.pl/home.php",
-          github: "https://github.com/",
+          live: "https://woytek.com.pl/",
+          github: "https://github.com/WojciechSkirlo/portfolio-woytek",
           techStack: [
             {
               id: 1,
@@ -189,8 +185,8 @@ export default {
           id: 7,
           name: "warszawa45",
           img: "thumbnail-warszawa45.png",
-          live: "http://projectq12.woytek.com.pl/home.php",
-          github: "https://github.com/",
+          live: "https://wojciechskirlo.github.io/warszawa45/",
+          github: "https://github.com/WojciechSkirlo/warszawa45",
           techStack: [
             {
               id: 1,

@@ -25,8 +25,8 @@
         right-4
         bg-opacity-70
         hover:bg-opacity-100
-        transition-[background]
-        duration-300
+        transition-[background,opacity]
+        duration-500
       "
     >
       <ArrowNarrowUpIcon class="w-3.5 h-3.5 fill-white" />
