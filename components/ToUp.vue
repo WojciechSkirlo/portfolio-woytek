@@ -6,6 +6,7 @@
     enter-from-class="opacity-0"
   >
     <button
+      aria-label="Scroll To Up"
       v-if="isToUp"
       @click="scrollToUp"
       class="

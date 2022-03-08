@@ -24,7 +24,7 @@
           <span class="font-medium text-transparent bg-clip-text bg-gradient-to-br from-accent to-accent-light">{{ item.name }}</span>
         </div>
         <div class="flex flex-col items-center gap-4">
-          <a :href="item.live" target="_blank" v-if="item.hasOwnProperty('live') && item.live" class="flex items-center">
+          <a aria-label="Show live" :href="item.live" target="_blank" v-if="item.hasOwnProperty('live') && item.live" class="flex items-center">
             <span class="font-medium transition-colors duration-300 dark:text-dark-white">Sprawdź Live</span>
             <svg
               class="ml-2 transition-colors duration-300 animate-bounce-right dark:fill-dark-white"
@@ -38,7 +38,7 @@
               ></path>
             </svg>
           </a>
-          <a :href="item.github" target="_blank" v-if="item.hasOwnProperty('github') && item.github" class="flex items-center">
+          <a :href="item.github" aria-label="GitHub" target="_blank" v-if="item.hasOwnProperty('github') && item.github" class="flex items-center">
             <span class="font-medium transition-colors duration-300 dark:text-dark-white">GitGub</span>
             <svg
               class="ml-2 transition-colors duration-300 animate-bounce-right dark:fill-dark-white"

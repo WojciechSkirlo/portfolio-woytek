@@ -9,7 +9,7 @@
             <component :is="item.icon" class="w-5 h-5 mr-4"></component>
             <span class="pl-4 uppercase border-l border-white">{{ item.key }}</span>
             <span class="mr-1">:</span>
-            <a :href="item.link">{{ item.value }}</a>
+            <a aria-label="Contact" :href="item.link">{{ item.value }}</a>
           </div>
         </div>
         <!-- Social media -->
@@ -19,6 +19,7 @@
             :key="item.id"
             :href="item.link"
             class="flex items-center justify-center p-1 py-3.5 text-center bg-white relative group overflow-hidden"
+            aria-label="Social medi"
           >
             <div class="absolute left-0 w-full h-full transition-all duration-500 bg-accent-light top-full group-hover:top-0"></div>
             <svg class="relative z-10 w-[18px] h-[18px] fill-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" v-html="item.icon"></svg>
@@ -27,7 +28,7 @@
       </div>
       <div class="flex items-center justify-end h-12 text-left font-extralight">
         <p class="text-xs">
-          <a href="#" class="underline decoration-accent-light">Wojciech Skirło</a>
+          <a aria-label="Copyright" href="#" class="underline decoration-accent-light">Wojciech Skirło</a>
           {{ `&copy;` }} 2022. Wszelkie prawa zastrzeżone.
         </p>
       </div>

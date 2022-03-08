@@ -1,117 +1,186 @@
 <template>
-  <div id="header" v-cloak v-click-outside="hideMenu">
+  <div>
     <div
-      class="fixed top-0 right-0 z-20 items-center w-full transition-all duration-500"
+      class="fixed top-0 left-0 z-40 items-center justify-end hidden w-full transition-all duration-500 lg:flex"
       :class="isBackgroundMenu && ['bg-white/70', 'dark:bg-dark-neutral/70', 'backdrop-blur-md']"
     >
-      <div class="container flex items-center justify-end p-4 px-5 mx-auto">
-        <button @click="toggleMenu" class="flex items-center justify-center w-5 h-5">
-          <MenuAlt4Icon v-show="!isMenu" class="w-full h-5 transition-colors duration-300 dark:text-dark-white" />
-          <XIcon v-show="isMenu" class="w-full h-5 transition-colors duration-300 dark:text-dark-white" />
-        </button>
-      </div>
-    </div>
-    <transition
-      enter-active-class="transition-transform duration-300"
-      leave-active-class="transition-transform duration-300"
-      leave-to-class="-translate-x-full"
-      enter-from-class="-translate-x-full"
-    >
-      <div
-        v-if="isMenu"
-        class="
-          fixed
-          top-0
-          bottom-0
-          left-0
-          z-20
-          flex flex-col
-          w-4/5
-          transition-[colors,transform]
-          duration-300
-          bg-white/70
-          dark:bg-dark-neutral/70
-          backdrop-blur-md
-        "
-      >
-        <div class="flex items-center justify-start w-full gap-4 py-[17px] px-5">
-          <button
-            @click="themeMode === 'dark' ? (themeMode = 'light') : (themeMode = 'dark')"
-            class="relative flex h-4 transition-colors duration-300 bg-black rounded-full dark:bg-dark-white w-9"
-          >
-            <div
-              class="absolute -top-0.5 w-5 h-5 rounded-full transition-[left] bg-accent"
-              :class="themeMode === 'dark' ? 'left-[18px]' : '-left-0.5'"
-            ></div>
-          </button>
-          <span class="transition-colors duration-300 dark:text-dark-white">Tryb ciemny {{ themeMode === "dark" ? "włączony" : "wyłączony" }}</span>
-        </div>
-        <div class="flex flex-col p-6 px-8">
-          <!-- Menu -->
-          <h3 class="mb-6 text-sm font-semibold uppercase transition-colors duration-300 dark:text-dark-white">Menu</h3>
-          <ul class="ml-2">
-            <li v-for="item in menu" :key="item.id" class="mb-1 transition-colors duration-300 dark:text-dark-white last:mb-0">
+      <div class="flex items-center gap-6">
+        <nav>
+          <ul class="flex gap-4 py-4">
+            <li v-for="item in menu" :key="item.id">
               <button
-                @click="scrollToSection(item.link)"
+                aria-label="Scroll To Section"
+                @click="scrollToSection(item.link, '64')"
                 class="
                   px-4
+                  text-sm
                   py-1.5
+                  font-medium
                   leading-4
-                  inline-block
-                  transition-colors
-                  duration-300
                   bg-accent-light
                   rounded
-                  dark:text-dark-neutral
-                  font-medium
-                  text-sm
+                  hover:bg-black hover:text-white
+                  transition-colors
+                  duration-300
                 "
               >
-                {{ item.name }}
+                <span>
+                  {{ item.name }}
+                </span>
               </button>
             </li>
           </ul>
-
-          <!-- Contact -->
-          <h3 class="mt-10 mb-6 text-sm font-semibold uppercase transition-colors duration-300 dark:text-dark-white">Kontakt</h3>
-          <ul class="flex flex-col items-start ml-2">
-            <li v-for="item in contact" :key="item.id" class="flex mb-1 transition-colors duration-300 dark:text-dark-white last:mb-0">
-              <a
-                :href="item.link"
-                class="
-                  px-4
-                  py-1.5
-                  bg-accent-light
-                  rounded
-                  dark:text-dark-neutral
-                  transition-colors
-                  duration-300
-                  font-medium
-                  flex
-                  justify-start
-                  leading-4
-                  gap-2
-                  items-center
-                  text-sm
-                "
-                target="_blank"
-              >
-                <span>
-                  <svg class="w-4 h-4 fill-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" v-html="item.icon"></svg>
-                </span>
-                <span>{{ item.name }}</span>
-              </a>
-            </li>
-          </ul>
+        </nav>
+        <button
+          aria-label="Change theme mode"
+          @click="themeMode === 'dark' ? (themeMode = 'light') : (themeMode = 'dark')"
+          class="relative flex h-4 transition-colors duration-300 bg-white rounded-full dark:bg-dark-neutral w-9"
+        >
+          <div
+            class="absolute -top-0.5 w-5 h-5 rounded-full transition-[left] bg-accent"
+            :class="themeMode === 'dark' ? 'left-[18px]' : '-left-0.5'"
+          ></div>
+        </button>
+        <div class="flex h-16 gap-4">
+          <a
+            aria-label="Contact"
+            v-for="item in contact"
+            :key="item.id"
+            :href="item.link"
+            target="_blank"
+            class="flex items-center justify-center h-16 group"
+          >
+            <svg
+              class="w-4 h-4 fill-black"
+              :class="isBackgroundMenu ? 'dark:fill-dark-grey' : ''"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 448 512"
+              v-html="item.icon"
+            ></svg>
+          </a>
+          <a aria-label="Contact" href="mailto:wojciechskiro@gmail.com" class="flex items-center justify-center w-16 h-16 bg-black">
+            <PaperAirplaneIcon class="w-5 h-5 text-white rotate-45" />
+          </a>
         </div>
       </div>
-    </transition>
+    </div>
+    <div class="lg:hidden" id="header" v-cloak v-click-outside="hideMenu">
+      <div
+        class="fixed top-0 right-0 z-40 items-center w-full transition-all duration-500"
+        :class="isBackgroundMenu && ['bg-white/70', 'dark:bg-dark-neutral/70', 'backdrop-blur-md']"
+      >
+        <div class="container flex items-center justify-end px-5 py-4 mx-auto">
+          <button @click="toggleMenu" aria-label="Toggle menu" class="flex items-center justify-center w-5 h-5">
+            <MenuAlt4Icon v-show="!isMenu" class="w-full h-5 transition-colors duration-300 dark:text-dark-white" />
+            <XIcon v-show="isMenu" class="w-full h-5 transition-colors duration-300 dark:text-dark-white" />
+          </button>
+        </div>
+      </div>
+      <transition
+        enter-active-class="transition-transform duration-300"
+        leave-active-class="transition-transform duration-300"
+        leave-to-class="-translate-x-full"
+        enter-from-class="-translate-x-full"
+      >
+        <div
+          v-if="isMenu"
+          class="
+            fixed
+            top-0
+            bottom-0
+            left-0
+            z-50
+            flex flex-col
+            w-4/5
+            transition-[colors,transform]
+            duration-300
+            bg-white/70
+            dark:bg-dark-neutral/70
+            backdrop-blur-md
+          "
+        >
+          <div class="flex items-center justify-start w-full gap-4 py-[17px] px-5">
+            <button
+              aria-label="Change theme mode"
+              @click="themeMode === 'dark' ? (themeMode = 'light') : (themeMode = 'dark')"
+              class="relative flex h-4 transition-colors duration-300 bg-black rounded-full dark:bg-dark-white w-9"
+            >
+              <div
+                class="absolute -top-0.5 w-5 h-5 rounded-full transition-[left] bg-accent"
+                :class="themeMode === 'dark' ? 'left-[18px]' : '-left-0.5'"
+              ></div>
+            </button>
+            <span class="transition-colors duration-300 dark:text-dark-white">Tryb ciemny {{ themeMode === "dark" ? "włączony" : "wyłączony" }}</span>
+          </div>
+          <nav class="flex flex-col p-6 px-8">
+            <!-- Menu -->
+            <h3 class="mb-6 text-sm font-semibold uppercase transition-colors duration-300 dark:text-dark-white">Menu</h3>
+            <ul class="ml-2">
+              <li v-for="item in menu" :key="item.id" class="mb-1 transition-colors duration-300 dark:text-dark-white last:mb-0">
+                <button
+                  aria-label="Scroll To Section"
+                  @click="scrollToSection(item.link, '52')"
+                  class="
+                    px-4
+                    py-1.5
+                    leading-4
+                    inline-block
+                    transition-colors
+                    duration-300
+                    bg-accent-light
+                    rounded
+                    dark:text-dark-neutral
+                    font-medium
+                    text-sm
+                  "
+                >
+                  {{ item.name }}
+                </button>
+              </li>
+            </ul>
+
+            <!-- Contact -->
+            <h3 class="mt-10 mb-6 text-sm font-semibold uppercase transition-colors duration-300 dark:text-dark-white">Kontakt</h3>
+            <ul class="flex flex-col items-start ml-2">
+              <li v-for="item in contact" :key="item.id" class="flex mb-1 transition-colors duration-300 dark:text-dark-white last:mb-0">
+                <a
+                  aria-label="Contact"
+                  :href="item.link"
+                  class="
+                    px-4
+                    py-1.5
+                    bg-accent-light
+                    rounded
+                    dark:text-dark-neutral
+                    transition-colors
+                    duration-300
+                    font-medium
+                    flex
+                    justify-start
+                    leading-4
+                    gap-2
+                    items-center
+                    text-sm
+                  "
+                  target="_blank"
+                >
+                  <span>
+                    <svg class="w-4 h-4 fill-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" v-html="item.icon"></svg>
+                  </span>
+                  <span>{{ item.name }}</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </transition>
+    </div>
   </div>
 </template>
 <script>
-import { MenuAlt4Icon, XIcon } from "@heroicons/vue/solid";
+import { MenuAlt4Icon, XIcon, PaperAirplaneIcon } from "@heroicons/vue/solid";
 export default {
-  components: { MenuAlt4Icon, XIcon },
+  components: { MenuAlt4Icon, XIcon, PaperAirplaneIcon },
   data() {
     return {
       themeMode: "light",
@@ -168,9 +237,9 @@ export default {
     hideMenu() {
       this.isMenu && (this.isMenu = false);
     },
-    scrollToSection(link) {
+    scrollToSection(link, navHeight = 52) {
       const el = document.querySelector(link);
-      window.scroll({ top: el.offsetTop - 52, behavior: "smooth" });
+      window.scroll({ top: el.offsetTop - navHeight, behavior: "smooth" });
       this.hideMenu();
     },
   },

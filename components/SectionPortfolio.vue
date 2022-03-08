@@ -147,7 +147,7 @@ export default {
         {
           id: 6,
           name: "portfolio",
-          img: "thumbnail-woytek.png",
+          img: "thumbnail-portfolio.png",
           live: "https://woytek.com.pl/",
           github: "https://github.com/WojciechSkirlo/portfolio-woytek",
           techStack: [

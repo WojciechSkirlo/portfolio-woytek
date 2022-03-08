@@ -8,7 +8,7 @@
       h-screen
       min-h-[576px]
       max-h-[690px]
-      md:max-h-screen
+      md:max-h-[1080px]
       overflow-hidden
       bg-gradient-to-br
       from-accent
@@ -25,9 +25,14 @@
     <div class="container relative z-10 flex flex-col items-center flex-1 px-5 mx-auto">
       <div class="w-full h-16"></div>
       <div class="flex flex-col items-center justify-center flex-1 p-8 text-center">
-        <h1 class="mb-8 text-[4.25rem] leading-tight font-extralight text-black">Cześć! Jestem <span class="uppercase">Woytek</span></h1>
+        <h1 class="mb-8 md:mb-16 leading-tight md:leading-snug text-[4.25rem] md:text-[74px] font-extralight text-black">
+          Cześć! Jestem
+          <span class="uppercase">Woytek</span>
+        </h1>
         <div class="px-6 py-2 text-white uppercase bg-black">
-          <span class="font-medium text-transparent bg-clip-text bg-gradient-to-br from-accent via-accent-light to-white"> Frontend Developer </span>
+          <span class="font-medium text-transparent md:text-lg bg-clip-text bg-gradient-to-br from-accent via-accent-light to-white">
+            Frontend Developer
+          </span>
         </div>
       </div>
       <div class="flex items-center h-16">
