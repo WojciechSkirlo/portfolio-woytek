@@ -45,7 +45,7 @@
   </section>
 </template>
 <script>
-import { ArrowNarrowDownIcon } from "@heroicons/vue/solid";
+import { ArrowNarrowDownIcon } from "@heroicons/vue/solid/index.js";
 export default {
   components: { ArrowNarrowDownIcon },
   data() {
