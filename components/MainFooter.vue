@@ -36,8 +36,7 @@
   </footer>
 </template>
 <script>
-import { ChatAlt2Icon } from "@heroicons/vue/solid";
-import { PhoneIcon } from "@heroicons/vue/solid";
+import { ChatAlt2Icon, PhoneIcon } from "@heroicons/vue/solid";
 export default {
   components: { ChatAlt2Icon, PhoneIcon },
   data() {
