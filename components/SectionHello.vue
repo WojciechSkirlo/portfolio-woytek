@@ -19,7 +19,7 @@
       v-for="item in bubbles"
       :key="item.id"
       class="absolute bottom-0 rounded-full bg-gradient-to-br from-accent/70 via-accent-light/70 to-white backdrop-blur-md"
-      :class="item.animation == 1 ? ['animation-bubble'] : ['animation-bubble-2', 'translate-y-full']"
+      :class="item.animation == 1 ? ['animate-bubble'] : ['animate-bubble-second', 'translate-y-full']"
       :style="`width: ${item.size}rem; height: ${item.size}rem; left: ${item.left}%; animation-delay: ${item.delay}ms`"
     ></div>
     <div class="container relative z-10 flex flex-col items-center flex-1 px-5 mx-auto">
@@ -99,86 +99,3 @@ export default {
   },
 };
 </script>
-<style>
-.animation-bubble {
-  animation: bubble 20s linear infinite both;
-}
-.animation-bubble-2 {
-  animation: bubble-2 20s linear infinite both;
-}
-@keyframes bubble {
-  0% {
-    transform: translateX(0) scale(0);
-  }
-  2% {
-    transform: translateX(2px) scale(1.1);
-  }
-  4% {
-    transform: translateX(3px) scale(0.9);
-  }
-  5.5% {
-    transform: translateX(4px) scale(1);
-  }
-  12.5% {
-    transform: translateX(7px);
-  }
-  17.5% {
-    transform: translateX(3px);
-  }
-  21.5% {
-    transform: translateX(-3px);
-  }
-  30% {
-    transform: translateX(2px);
-  }
-  40% {
-    transform: translateX(4px);
-  }
-  50% {
-    transform: translateX(16px) scale(1);
-    bottom: 100%;
-  }
-  100% {
-    transform: translateX(16px) scale(1);
-    bottom: 100%;
-  }
-}
-
-@keyframes bubble-2 {
-  0% {
-    transform: translate(0, 100%);
-  }
-  2% {
-    transform: translate(-2px, 80%);
-  }
-  4% {
-    transform: translate(-3px, 70%);
-  }
-  7% {
-    transform: translate(-4px, 60%);
-  }
-  12.5% {
-    transform: translate(-7px, 50%);
-  }
-  17.5% {
-    transform: translate(-3px, 40%);
-  }
-  21.5% {
-    transform: translate(5px, 30%);
-  }
-  30% {
-    transform: translate(2px, 20%);
-  }
-  40% {
-    transform: translate(-4px, 0%);
-  }
-  50% {
-    transform: translateX(-16px);
-    bottom: 100%;
-  }
-  100% {
-    transform: translateX(16px);
-    bottom: 100%;
-  }
-}
-</style>

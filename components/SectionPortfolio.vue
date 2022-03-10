@@ -148,7 +148,7 @@ export default {
           id: 6,
           name: "portfolio",
           img: "thumbnail-portfolio",
-          live: "https://woytek.com.pl/",
+          live: "https://ecstatic-bassi-0630a1.netlify.app/",
           github: "https://github.com/WojciechSkirlo/portfolio-woytek",
           techStack: [
             {
