@@ -11,6 +11,7 @@
       @click="scrollToUp"
       class="
         fixed
+        rounded
         z-10
         flex flex-col
         items-center
@@ -37,7 +38,7 @@
   </transition>
 </template>
 <script>
-import { ArrowNarrowUpIcon } from "@heroicons/vue/solid";
+import { ArrowNarrowUpIcon } from "@heroicons/vue/solid/index.js";
 export default {
   components: { ArrowNarrowUpIcon },
   data() {

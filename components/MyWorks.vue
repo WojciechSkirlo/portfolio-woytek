@@ -5,7 +5,7 @@
   >
     <div class="flex items-center justify-center w-full h-full rounded-lg bg-accent-light" @click="toggleInfo(true)">
       <img
-        :src="`/static/works/${item.img}`"
+        :src="`/works/${item.img}.png`"
         :alt="item.name"
         class="object-contain w-32 h-32 transition-transform duration-500"
         :class="isInfo && 'scale-110'"

@@ -9,7 +9,7 @@
             <component :is="item.icon" class="w-5 h-5 mr-4"></component>
             <span class="pl-4 uppercase border-l border-white">{{ item.key }}</span>
             <span class="mr-1">:</span>
-            <a aria-label="Contact" :href="item.link">{{ item.value }}</a>
+            <a aria-label="Contact" class="hover:underline" :href="item.link">{{ item.value }}</a>
           </div>
         </div>
         <!-- Social media -->
@@ -36,7 +36,7 @@
   </footer>
 </template>
 <script>
-import { ChatAlt2Icon, PhoneIcon } from "@heroicons/vue/solid";
+import { ChatAlt2Icon, PhoneIcon } from "@heroicons/vue/solid/index.js";
 export default {
   components: { ChatAlt2Icon, PhoneIcon },
   data() {

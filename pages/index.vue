@@ -1,8 +1,8 @@
 <template>
-  <div class="antialiased" @mouseenter="changePosition" @mousemove="changePosition">
+  <div class="antialiased">
     <Html lang="pl-PL">
       <Head>
-        <Link rel="icon" type="image/png" href="/static/favicon.ico" />
+        <Link rel="icon" type="image/png" href="/favicon.ico" />
         <Title>Woytek | Portfolio</Title>
         <Meta
           name="description"

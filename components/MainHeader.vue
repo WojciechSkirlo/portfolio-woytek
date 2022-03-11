@@ -178,7 +178,7 @@
   </div>
 </template>
 <script>
-import { MenuAlt4Icon, XIcon, PaperAirplaneIcon } from "@heroicons/vue/solid";
+import { MenuAlt4Icon, XIcon, PaperAirplaneIcon } from "@heroicons/vue/solid/index.js";
 export default {
   components: { MenuAlt4Icon, XIcon, PaperAirplaneIcon },
   data() {

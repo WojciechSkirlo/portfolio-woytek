@@ -13,7 +13,7 @@
   </section>
 </template>
 <script>
-import { CursorClickIcon } from "@heroicons/vue/solid";
+import { CursorClickIcon } from "@heroicons/vue/solid/index.js";
 export default {
   components: { CursorClickIcon },
   data() {
@@ -22,7 +22,7 @@ export default {
         {
           id: 1,
           name: "projectq12",
-          img: "thumbnail-projectq12.png",
+          img: "thumbnail-projectq12",
           live: "http://projectq12.woytek.com.pl/home.php",
           github: "https://github.com/WojciechSkirlo/projectq12",
           techStack: [
@@ -51,7 +51,7 @@ export default {
         {
           id: 2,
           name: "gmw-spaw",
-          img: "thumbnail-gmwspaw.png",
+          img: "thumbnail-gmwspaw",
           live: "https://gmw-spaw.com/",
           techStack: [
             {
@@ -83,7 +83,7 @@ export default {
         {
           id: 3,
           name: "bąbelkowe spa",
-          img: "thumbnail-babelkowespa.png",
+          img: "thumbnail-babelkowespa",
           live: "http://babelkowespa.pl/",
           techStack: [
             {
@@ -111,7 +111,7 @@ export default {
         {
           id: 4,
           name: "marc-verso",
-          img: "thumbnail-marcverso.png",
+          img: "thumbnail-marcverso",
           live: "https://marcverso.pl/",
           techStack: [
             {
@@ -123,7 +123,7 @@ export default {
         {
           id: 5,
           name: "najmcar",
-          img: "thumbnail-najmcar.png",
+          img: "thumbnail-najmcar",
           live: "http://najmcar.pl/",
           techStack: [
             {
@@ -147,8 +147,8 @@ export default {
         {
           id: 6,
           name: "portfolio",
-          img: "thumbnail-portfolio.png",
-          live: "https://woytek.com.pl/",
+          img: "thumbnail-portfolio",
+          live: "https://www.woytek.com.pl/",
           github: "https://github.com/WojciechSkirlo/portfolio-woytek",
           techStack: [
             {
@@ -184,7 +184,7 @@ export default {
         {
           id: 7,
           name: "warszawa45",
-          img: "thumbnail-warszawa45.png",
+          img: "thumbnail-warszawa45",
           live: "https://wojciechskirlo.github.io/warszawa45/",
           github: "https://github.com/WojciechSkirlo/warszawa45",
           techStack: [
