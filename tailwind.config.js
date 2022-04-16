@@ -9,7 +9,6 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "white": "#ffffff",
         "accent": {
           'light': "#e9d5ff",
           DEFAULT: "#d8b4fe"

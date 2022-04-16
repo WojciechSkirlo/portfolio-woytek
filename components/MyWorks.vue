@@ -1,9 +1,8 @@
 <template>
-  <div
-    v-click-outside="toggleInfo"
-    class="relative w-full overflow-hidden sm:w-[calc(50%-10px)] lg:w-[calc(33%-11px)] 2xl:w-[calc(25%-15px)] aspect-square cursor-pointer"
+  <div @mouseleave="toggleInfo(false)"
+    class="relative w-full overflow-hidden sm:w-[calc(50%-10px)] lg:w-[calc(33%-11px)] 2xl:w-[calc(25%-15px)] aspect-square"
   >
-    <div class="flex items-center justify-center w-full h-full rounded-lg bg-accent-light" @click="toggleInfo(true)">
+    <div class="flex items-center justify-center w-full h-full rounded-lg bg-accent-light" @mouseenter="toggleInfo(true)">
       <img
         :src="`/works/${item.img}.png`"
         :alt="item.name"
@@ -12,16 +11,16 @@
       />
     </div>
     <div
-      class="absolute top-0 right-0 flex items-center justify-center w-full h-full p-4 transition-transform duration-500 translate-x-full rounded-lg  bg-white/40 dark:bg-dark-neutral/60 backdrop-blur-md"
+      class="absolute top-0 right-0 flex items-center justify-center w-full h-full p-4 transition-transform duration-500 translate-x-full rounded-lg  bg-white/50 dark:bg-dark-neutral/60 backdrop-blur-md"
       :class="isInfo ? 'translate-x-0' : 'translate-x-full'"
       @click="toggleInfo(false)"
     >
       <div class="flex flex-col items-center text-center">
         <div
-          class="px-3 py-1.5 text-lg font-light leading-none uppercase bg-white"
+          class="px-3 py-1.5 text-lg font-light leading-none uppercase bg-white rounded"
           :class="((item.hasOwnProperty('live') && item.live) || (item.hasOwnProperty('github') && item.github)) && 'mb-8'"
         >
-          <span class="font-medium text-transparent bg-clip-text bg-gradient-to-br from-accent to-accent-light">{{ item.name }}</span>
+          <span class="font-medium text-transparent bg-clip-text bg-gradient-to-l from-black via-accent to-black">{{ item.name }}</span>
         </div>
         <div class="flex flex-col items-center gap-4">
           <a aria-label="Show live" :href="item.live" target="_blank" v-if="item.hasOwnProperty('live') && item.live" class="flex items-center">
@@ -80,21 +79,6 @@ export default {
   methods: {
     toggleInfo(param = false) {
       this.isInfo = param;
-    },
-  },
-  directives: {
-    clickOutside: {
-      beforeMount(el, binding) {
-        el.clickOutSideEvent = (event) => {
-          if (!(el == event.target || el.contains(event.target))) {
-            binding.value();
-          }
-        };
-        document.addEventListener("click", el.clickOutSideEvent);
-      },
-      unmounted: (el) => {
-        document.removeEventListener("click", el.clickOutsideEvent);
-      },
     },
   },
 };

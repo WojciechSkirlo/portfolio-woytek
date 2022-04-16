@@ -2,7 +2,11 @@
   <section id="portfolio" class="w-full transition-colors duration-300 bg-white dark:bg-dark-neutral">
     <MainWrapper>
       <HeadingDefault class="mb-8" :center="true">Portfolio</HeadingDefault>
-      <p class="px-12 mb-5 text-sm text-center transition-colors duration-300 font-extralight dark:text-dark-grey">
+      <p class="px-12 hidden lg:block mb-5 text-sm text-center transition-colors duration-300 font-extralight dark:text-dark-grey">
+        Najedź na pracę, aby poznać więcej szczegółów
+        <CursorClickIcon class="inline-block w-4 h-4 ml-2" />
+      </p>
+      <p class="px-12 mb-5 lg:hidden text-sm text-center transition-colors duration-300 font-extralight dark:text-dark-grey">
         Kliknij na pracę, aby poznać więcej szczegółów
         <CursorClickIcon class="inline-block w-4 h-4 ml-2" />
       </p>
@@ -23,7 +27,7 @@ export default {
           id: 1,
           name: "projectq12",
           img: "thumbnail-projectq12",
-          live: "http://projectq12.woytek.com.pl/home.php",
+          live: "http://projectq12.woytek-portfolio.pl/",
           github: "https://github.com/WojciechSkirlo/projectq12",
           techStack: [
             {

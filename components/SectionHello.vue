@@ -29,8 +29,8 @@
           Cześć! Jestem
           <span class="uppercase">Woytek</span>
         </h1>
-        <div class="px-6 py-2 text-white uppercase bg-black">
-          <span class="font-medium text-transparent md:text-lg bg-clip-text bg-gradient-to-br from-accent via-accent-light to-white">
+        <div class="px-6 py-2 text-white uppercase rounded bg-black">
+          <span class="font-medium text-transparent  md:text-lg bg-clip-text bg-gradient-to-br from-accent via-accent-light to-white">
             Frontend Developer
           </span>
         </div>
