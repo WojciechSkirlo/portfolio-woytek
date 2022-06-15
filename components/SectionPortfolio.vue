@@ -2,11 +2,11 @@
   <section id="portfolio" class="w-full transition-colors duration-300 bg-white dark:bg-dark-neutral">
     <MainWrapper>
       <HeadingDefault class="mb-8" :center="true">Portfolio</HeadingDefault>
-      <p class="px-12 hidden lg:block mb-5 text-sm text-center transition-colors duration-300 font-extralight dark:text-dark-grey">
+      <p class="hidden px-12 mb-5 text-sm text-center transition-colors duration-300 lg:block font-extralight dark:text-dark-grey">
         Najedź na pracę, aby poznać więcej szczegółów
         <CursorClickIcon class="inline-block w-4 h-4 ml-2" />
       </p>
-      <p class="px-12 mb-5 lg:hidden text-sm text-center transition-colors duration-300 font-extralight dark:text-dark-grey">
+      <p class="px-12 mb-5 text-sm text-center transition-colors duration-300 lg:hidden font-extralight dark:text-dark-grey">
         Kliknij na pracę, aby poznać więcej szczegółów
         <CursorClickIcon class="inline-block w-4 h-4 ml-2" />
       </p>
@@ -27,7 +27,6 @@ export default {
           id: 1,
           name: "projectq12",
           img: "thumbnail-projectq12",
-          live: "http://projectq12.woytek-portfolio.pl/",
           github: "https://github.com/WojciechSkirlo/projectq12",
           techStack: [
             {
@@ -114,13 +113,38 @@ export default {
         },
         {
           id: 4,
-          name: "marc-verso",
-          img: "thumbnail-marcverso",
-          live: "https://marcverso.pl/",
+          name: "emulator intel 8086",
+          img: "thumbnail-portfolio",
+          live: "https://merry-granita-33b312.netlify.app/",
+          github: "https://github.com/WojciechSkirlo/architecture-of-computer-systems-project",
           techStack: [
             {
               id: 1,
-              name: "wordpress",
+              name: "html",
+            },
+            {
+              id: 2,
+              name: "css",
+            },
+            {
+              id: 3,
+              name: "vue",
+            },
+            {
+              id: 4,
+              name: "tailwind 3",
+            },
+            {
+              id: 5,
+              name: "js",
+            },
+            {
+              id: 6,
+              name: "vue 3",
+            },
+            {
+              id: 7,
+              name: "git",
             },
           ],
         },
