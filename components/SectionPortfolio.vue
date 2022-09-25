@@ -238,6 +238,39 @@ export default {
             },
           ],
         },
+        {
+          id: 8,
+          name: "rick&morty",
+          img: "thumbnail-rick-and-morty",
+          live: "https://golden-bavarois-55b6c8.netlify.app/",
+          github: "https://github.com/WojciechSkirlo/rick-morty",
+          techStack: [
+            {
+              id: 1,
+              name: "html",
+            },
+            {
+              id: 2,
+              name: "css",
+            },
+            {
+              id: 3,
+              name: "vue 3",
+            },
+            {
+              id: 4,
+              name: "tailwind 3",
+            },
+            {
+              id: 5,
+              name: "js",
+            },
+            {
+              id: 6,
+              name: "git",
+            },
+          ],
+        },
       ],
     };
   },

@@ -3,7 +3,8 @@
   "scripts": {
     "dev": "nuxi dev",
     "build": "nuxi build",
-    "start": "node .output/server/index.mjs"
+    "start": "node .output/server/index.mjs",
+    "preview": "nuxt preview"
   },
   "devDependencies": {
     "@nuxt/postcss8": "^1.1.3",
@@ -13,6 +14,6 @@
   },
   "dependencies": {
     "@heroicons/vue": "^1.0.6",
-    "nuxt3": "^3.0.0-rc.4-27588443.cf25525"
+    "nuxt": "^3.0.0-rc.4-27588443.cf25525"
   }
 }
