@@ -24,11 +24,7 @@
     <div class="container relative z-10 flex flex-col items-center flex-1 px-5 mx-auto">
       <div class="flex flex-col items-center justify-center flex-1 p-8 text-center">
         <h1 class="mb-8 md:mb-12 leading-tight md:leading-snug text-[4.25rem] md:text-[74px] font-extralight text-black">Error 404!</h1>
-        <div class="px-6 py-2 text-white uppercase bg-black">
-          <span class="font-medium text-transparent md:text-lg bg-clip-text bg-gradient-to-br from-accent via-accent-light to-white">
-            Page not found :/
-          </span>
-        </div>
+        <BaseBadge>Page not found :/</BaseBadge>
       </div>
     </div>
   </section>

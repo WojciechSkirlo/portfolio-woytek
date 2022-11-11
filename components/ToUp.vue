@@ -28,10 +28,14 @@ const scrollToTop = () => {
   });
 };
 
-onMounted(() => {
+const toggleIsToTop = () => {
   window.pageYOffset > 400 ? (isToTop.value = true) : (isToTop.value = false);
+};
+
+onMounted(() => {
+  toggleIsToTop();
   window.addEventListener("scroll", () => {
-    window.pageYOffset > 400 ? (isToTop.value = true) : (isToTop.value = false);
+    toggleIsToTop();
   });
 });
 </script>
