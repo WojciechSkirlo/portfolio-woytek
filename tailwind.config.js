@@ -112,7 +112,10 @@ module.exports = {
         base: ['15px', '18px'],
         lg: ['17px'],
         '5xl': ['2.5rem']
-      }
+      },
+      fontFamily: {
+        'body': ['Fira Sans', 'sans-serif'],
+      },
     },
   },
   plugins: [],

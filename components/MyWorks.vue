@@ -1,6 +1,7 @@
 <template>
-  <div @mouseleave="toggleInfo(false)"
+  <div
     class="relative w-full overflow-hidden sm:w-[calc(50%-10px)] lg:w-[calc(33%-11px)] 2xl:w-[calc(25%-15px)] aspect-square"
+    @mouseleave="toggleInfo(false)"
   >
     <div class="flex items-center justify-center w-full h-full rounded-lg bg-accent-light" @mouseenter="toggleInfo(true)">
       <img
@@ -11,7 +12,7 @@
       />
     </div>
     <div
-      class="absolute top-0 right-0 flex items-center justify-center w-full h-full p-4 transition-transform duration-500 translate-x-full rounded-lg  bg-white/50 dark:bg-dark-neutral/60 backdrop-blur-md"
+      class="absolute top-0 right-0 flex items-center justify-center w-full h-full p-4 transition-transform duration-500 translate-x-full rounded-lg bg-white/50 dark:bg-dark-neutral/60 backdrop-blur-md"
       :class="isInfo ? 'translate-x-0' : 'translate-x-full'"
       @click="toggleInfo(false)"
     >
@@ -63,23 +64,14 @@
     </div>
   </div>
 </template>
-<script>
-export default {
-  props: {
-    item: {
-      type: Object,
-      default: {},
-    },
-  },
-  data() {
-    return {
-      isInfo: false,
-    };
-  },
-  methods: {
-    toggleInfo(param = false) {
-      this.isInfo = param;
-    },
-  },
+<script setup lang="ts">
+defineProps<{
+  item: any;
+}>();
+
+const isInfo = ref(false);
+
+const toggleInfo = (param = false) => {
+  isInfo.value = param;
 };
 </script>

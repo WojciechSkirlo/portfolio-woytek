@@ -1,17 +1,5 @@
 <template>
   <section id="hello" class="relative flex flex-col w-full h-screen overflow-hidden bg-gradient-to-br from-accent to-accent-light">
-    <Html lang="pl-PL">
-      <Head>
-        <Link rel="icon" type="image/png" href="/favicon.ico" />
-        <Title>Woytek | Page not found</Title>
-        <Meta
-          name="description"
-          :content="`Tak właściwie to nazywam się Skirło Wojciech. Mam 20 lat. Pochodzę z niewielkiej miejscowości położonej 60 km od Krakowa.
-                      Od najmłodszych lat interesuję się informatyką a w 2021 roku rozpocząłem naukę w Wyższej Szkole Ekonomii i Informatyki w Krakowie na kierunku informatyki stosowanej.
-                      Z każdym dniem wzbogacam się o nowe umiejętności, dzięki czemu potrafię coraz więcej.`"
-        />
-      </Head>
-    </Html>
     <NuxtLink to="/" class="flex items-center gap-2 px-8 py-4 mt-4">
       <svg
         class="duration-300 rotate-180 shrink-0 dark:fill-dark-white"
