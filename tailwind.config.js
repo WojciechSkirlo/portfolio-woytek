@@ -21,6 +21,7 @@ module.exports = {
       },
       animation: {
         'bounce-right': 'bounce-right 0.8s infinite',
+        'bounce-right-faster': 'bounce-right 0.4s infinite',
         'bubble': 'bubble 20s linear infinite both',
         'bubble-second': 'bubble-second 20s linear infinite both',
       },

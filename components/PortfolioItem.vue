@@ -29,11 +29,11 @@
             :href="item.live"
             target="_blank"
             aria-label="Show live"
-            class="flex items-center"
+            class="flex items-center group"
           >
             <span class="font-medium transition-colors duration-300 dark:text-dark-white">Sprawdź Live</span>
             <svg
-              class="ml-2 transition-colors duration-300 animate-bounce-right dark:fill-dark-white"
+              class="ml-2 transition-colors duration-300 animate-bounce-right group-hover:animate-bounce-right-faster dark:fill-dark-white"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="-2 -2 24 24"
               width="16"
@@ -49,11 +49,11 @@
             :href="item.github"
             target="_blank"
             aria-label="GitHub"
-            class="flex items-center"
+            class="flex items-center group"
           >
-            <span class="font-medium transition-colors duration-300 dark:text-dark-white">GitGub</span>
+            <span class="font-medium transition-colors duration-300 dark:text-dark-white">GitHub</span>
             <svg
-              class="ml-2 transition-colors duration-300 animate-bounce-right dark:fill-dark-white"
+              class="ml-2 transition-colors duration-300 animate-bounce-right group-hover:animate-bounce-right-faster dark:fill-dark-white"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="-2 -2 24 24"
               width="16"
@@ -68,8 +68,8 @@
       </div>
       <div class="absolute bottom-0 left-0 flex flex-wrap w-full p-4 gap-1.5">
         <template v-if="item.hasOwnProperty('techStack') && item.techStack">
-          <div v-for="element in item.techStack" :key="element.id" class="bg-black text-white px-1 py-0.5 uppercase font-medium text-xs">
-            {{ element.name }}
+          <div v-for="(element, index) in item.techStack" :key="index" class="text-white px-1 py-0.5 uppercase font-medium text-xs bg-black">
+            {{ element }}
           </div>
         </template>
       </div>

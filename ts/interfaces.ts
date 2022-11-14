@@ -1,16 +1,14 @@
 export {};
-interface TechStack {
-  id: number;
-  name: string;
-}
+
+type Technology = "html" | "css" | "sass" | "tailwindcss" | "js" | "ts" | "vue" | "nuxt" | "jquery" | "php" | "pwa";
 
 declare global {
   interface Work {
     id: number;
     name: string;
     img: string;
-    github?: string;
     live?: string;
-    techStack?: Array<TechStack>;
+    github?: string;
+    techStack?: Array<Technology>;
   }
 }
