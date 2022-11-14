@@ -21,6 +21,7 @@ module.exports = {
       },
       animation: {
         'bounce-right': 'bounce-right 0.8s infinite',
+        'bounce-right-faster': 'bounce-right 0.4s infinite',
         'bubble': 'bubble 20s linear infinite both',
         'bubble-second': 'bubble-second 20s linear infinite both',
       },
@@ -112,7 +113,10 @@ module.exports = {
         base: ['15px', '18px'],
         lg: ['17px'],
         '5xl': ['2.5rem']
-      }
+      },
+      fontFamily: {
+        'body': ['Fira Sans', 'sans-serif'],
+      },
     },
   },
   plugins: [],

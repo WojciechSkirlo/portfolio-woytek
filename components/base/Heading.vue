@@ -6,21 +6,10 @@
     <slot />
   </h2>
 </template>
-<script>
-export default {
-  props: {
-    left: {
-      type: Boolean,
-      default: false,
-    },
-    center: {
-      type: Boolean,
-      default: false,
-    },
-    right: {
-      type: Boolean,
-      default: false,
-    },
-  },
-};
+<script setup lang="ts">
+defineProps<{
+  left?: boolean;
+  center?: boolean;
+  right?: boolean;
+}>();
 </script>

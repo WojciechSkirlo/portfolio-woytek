@@ -1,61 +1,41 @@
 <template>
-  <transition
+  <Transition
     enter-active-class="transition-opacity duration-500"
     leave-active-class="transition-opacity duration-500"
     leave-to-class="opacity-0"
     enter-from-class="opacity-0"
   >
     <button
+      v-if="isToTop"
+      type="button"
       aria-label="Scroll To Up"
-      v-if="isToUp"
-      @click="scrollToUp"
-      class="
-        fixed
-        rounded
-        z-10
-        flex flex-col
-        items-center
-        justify-center
-        px-2.5
-        pt-3
-        pb-2
-        text-xs text-white
-        uppercase
-        bg-black
-        font-extralight
-        bottom-9
-        right-4
-        bg-opacity-70
-        hover:bg-opacity-100
-        transition-[background,opacity]
-        duration-500
-      "
+      class="fixed rounded z-10 flex flex-col items-center justify-center px-2.5 pt-3 pb-2 text-xs text-white uppercase bg-black font-extralight bottom-9 right-4 bg-opacity-70 hover:bg-opacity-100 transition-[background,opacity] duration-500"
+      @click="scrollToTop"
     >
-      <ArrowNarrowUpIcon class="w-3.5 h-3.5 fill-white" />
+      <BaseIcon name="ArrowNarrowUpIcon" class="text-white" smaller />
       <span class="mt-1.5">to</span>
       <span>up</span>
     </button>
-  </transition>
+  </Transition>
 </template>
-<script>
-import { ArrowNarrowUpIcon } from "@heroicons/vue/solid/index.js";
-export default {
-  components: { ArrowNarrowUpIcon },
-  data() {
-    return {
-      isToUp: false,
-    };
-  },
-  methods: {
-    scrollToUp() {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    },
-  },
-  mounted() {
-    window.pageYOffset > 400 ? (this.isToUp = true) : (this.isToUp = false);
-    window.addEventListener("scroll", () => {
-      window.pageYOffset > 400 ? (this.isToUp = true) : (this.isToUp = false);
-    });
-  },
+<script setup lang="ts">
+const isToTop = ref(false);
+
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
 };
+
+const toggleIsToTop = () => {
+  window.pageYOffset > 400 ? (isToTop.value = true) : (isToTop.value = false);
+};
+
+onMounted(() => {
+  toggleIsToTop();
+  window.addEventListener("scroll", () => {
+    toggleIsToTop();
+  });
+});
 </script>
