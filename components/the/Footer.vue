@@ -2,10 +2,10 @@
   <footer id="contact" class="w-full text-white bg-black">
     <div class="container flex flex-col px-4 mx-auto">
       <div class="flex flex-col py-12 pb-6">
-        <BaseHeading :left="true" class="mb-12">Kontakt</BaseHeading>
+        <BaseHeading left class="mb-12">Kontakt</BaseHeading>
         <!-- Contact -->
         <div class="flex flex-col gap-5 mb-8">
-          <div v-for="item in contact.info" :key="item.id" class="flex items-center text-sm font-extralight">
+          <div v-for="item in contact" :key="item.id" class="flex items-center text-sm font-extralight">
             <BaseIcon :name="item.icon" class="mr-4 text-white" bigger />
             <span class="pl-4 mr-1 uppercase border-l border-white">{{ item.key }}: </span>
             <a :href="item.link" aria-label="Contact" class="hover:underline">{{ item.value }}</a>
@@ -13,21 +13,22 @@
         </div>
         <!-- Social media -->
         <div class="flex items-center gap-5 text-black">
-          <a
+          <NuxtLink
             v-for="item in socialMedia"
             :key="item.id"
-            :href="item.link"
+            :to="item.link"
+            target="_blank"
             class="flex items-center justify-center p-1 py-3.5 text-center bg-white relative group overflow-hidden"
             aria-label="Social medi"
           >
             <div class="absolute left-0 w-full h-full transition-all duration-500 bg-accent-light top-full group-hover:top-0"></div>
             <svg class="relative z-10 w-[18px] h-[18px] fill-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" v-html="item.icon"></svg>
-          </a>
+          </NuxtLink>
         </div>
       </div>
       <div class="flex items-center justify-end h-12 text-left font-extralight">
         <p class="text-xs">
-          <a aria-label="Copyright" href="#" class="underline decoration-accent-light">Wojciech Skirło</a>
+          <a href="#" aria-label="Copyright" class="underline decoration-accent-light">Wojciech Skirło</a>
           {{ `&copy;` }} 2022. Wszelkie prawa zastrzeżone.
         </p>
       </div>
@@ -35,26 +36,40 @@
   </footer>
 </template>
 <script setup lang="ts">
-const contact = {
-  info: [
-    {
-      id: 1,
-      icon: "ChatAlt2Icon",
-      key: "Email",
-      value: "wojciechskiro@gmail.com",
-      link: "mailto:wojciechskiro@gmail.com",
-    },
-    {
-      id: 2,
-      icon: "PhoneIcon",
-      key: "Nr tel",
-      value: "+48 733-789-494",
-      link: "tel:+48733789494",
-    },
-  ],
-};
+import * as HeroIcons from "@heroicons/vue/solid/index.js";
+interface FooterContact {
+  id: number;
+  icon: keyof typeof HeroIcons;
+  key: string;
+  value: string;
+  link: string;
+}
 
-const socialMedia = [
+interface FooterSocialMedia {
+  id: number;
+  name: string;
+  icon: string;
+  link: string;
+}
+
+const contact: Array<FooterContact> = [
+  {
+    id: 1,
+    icon: "ChatAlt2Icon",
+    key: "Email",
+    value: "wojciechskiro@gmail.com",
+    link: "mailto:wojciechskiro@gmail.com",
+  },
+  {
+    id: 2,
+    icon: "PhoneIcon",
+    key: "Nr tel",
+    value: "+48 733-789-494",
+    link: "tel:+48733789494",
+  },
+];
+
+const socialMedia: Array<FooterSocialMedia> = [
   {
     id: 1,
     name: "LinkedIn",

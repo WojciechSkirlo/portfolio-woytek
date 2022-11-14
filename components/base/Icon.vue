@@ -8,8 +8,4 @@ defineProps<{
   bigger?: boolean;
   smaller?: boolean;
 }>();
-
-onMounted(() => {
-  console.log("icons", HeroIcons);
-});
 </script>

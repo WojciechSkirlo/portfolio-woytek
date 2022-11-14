@@ -1,20 +1,20 @@
 <template>
   <section id="portfolio" class="w-full transition-colors duration-300 bg-white dark:bg-dark-neutral">
     <BaseWrapper>
-      <BaseHeading class="mb-8" :center="true">Portfolio</BaseHeading>
+      <BaseHeading center class="mb-8">Portfolio</BaseHeading>
       <p class="px-12 mb-5 text-sm text-center transition-colors duration-300 font-extralight dark:text-dark-grey">
         <span class="hidden lg:inline">Najedź na pracę, aby poznać więcej szczegółów</span>
-        <span class="lg:hidden">Kliknij na pracę, aby poznać więcej szczegółów</span>
+        <span class="lg:hidden">Naciśnij na pracę, aby poznać więcej szczegółów</span>
         <BaseIcon name="CursorClickIcon" class="inline-block ml-2" />
       </p>
       <div class="flex flex-wrap justify-center w-full gap-5">
-        <MyWorks v-for="item in works" :key="item.id" :item="item" />
+        <PortfolioItem v-for="item in works" :key="item.id" :item="item" />
       </div>
     </BaseWrapper>
   </section>
 </template>
 <script setup lang="ts">
-const works = [
+const works: Array<Work> = [
   {
     id: 1,
     name: "projectq12",

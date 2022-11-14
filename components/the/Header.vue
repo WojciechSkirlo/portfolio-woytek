@@ -20,25 +20,15 @@
             </li>
           </ul>
         </nav>
-        <button
-          type="button"
-          aria-label="Change theme mode"
-          class="relative flex h-4 transition-colors duration-300 bg-white rounded-full dark:bg-dark-neutral w-9"
-          @click="themeMode === 'dark' ? (themeMode = 'light') : (themeMode = 'dark')"
-        >
-          <div
-            class="absolute -top-0.5 w-5 h-5 rounded-full transition-[left] bg-accent"
-            :class="themeMode === 'dark' ? 'left-[18px]' : '-left-0.5'"
-          ></div>
-        </button>
+        <BaseSwitch v-model="isDarkMode" />
         <div class="flex h-16 gap-4">
-          <a
-            aria-label="Contact"
+          <NuxtLink
             v-for="item in contact"
             :key="item.id"
-            :href="item.link"
+            :to="item.link"
             target="_blank"
             class="flex items-center justify-center h-16 group"
+            aria-label="Contact"
           >
             <svg
               class="w-4 h-4 fill-black"
@@ -47,10 +37,10 @@
               viewBox="0 0 448 512"
               v-html="item.icon"
             ></svg>
-          </a>
-          <a aria-label="Contact" href="mailto:wojciechskiro@gmail.com" class="flex items-center justify-center w-16 h-16 bg-black">
+          </NuxtLink>
+          <NuxtLink href="mailto:wojciechskiro@gmail.com" class="flex items-center justify-center w-16 h-16 bg-black" aria-label="Contact">
             <BaseIcon name="PaperAirplaneIcon" class="text-white rotate-45" bigger />
-          </a>
+          </NuxtLink>
         </div>
       </div>
     </div>
@@ -60,7 +50,7 @@
         :class="isBackgroundMenu && ['bg-white/70', 'dark:bg-dark-neutral/70', 'backdrop-blur-md']"
       >
         <div class="container flex items-center justify-end px-5 py-4 mx-auto">
-          <button type="button" aria-label="Toggle menu" class="flex items-center justify-center w-5 h-5" @click="toggleMenu">
+          <button type="button" class="flex items-center justify-center w-5 h-5" aria-label="Toggle menu" @click="toggleMenu">
             <BaseIcon v-if="!isMenu" name="MenuAlt4Icon" class="transition-colors duration-300 dark:text-dark-white" bigger />
             <BaseIcon v-else name="XIcon" class="transition-colors duration-300 dark:text-dark-white" bigger />
           </button>
@@ -77,17 +67,8 @@
           class="fixed top-0 bottom-0 left-0 z-50 flex flex-col w-4/5 transition-[colors,transform] duration-300 bg-white/70 dark:bg-dark-neutral/70 backdrop-blur-md"
         >
           <div class="flex items-center justify-start w-full gap-4 py-[17px] px-5">
-            <button
-              aria-label="Change theme mode"
-              class="relative flex h-4 transition-colors duration-300 bg-black rounded-full dark:bg-dark-white w-9"
-              @click="themeMode === 'dark' ? (themeMode = 'light') : (themeMode = 'dark')"
-            >
-              <div
-                class="absolute -top-0.5 w-5 h-5 rounded-full transition-[left] bg-accent"
-                :class="themeMode === 'dark' ? 'left-[18px]' : '-left-0.5'"
-              ></div>
-            </button>
-            <span class="transition-colors duration-300 dark:text-dark-white">Tryb ciemny {{ themeMode === "dark" ? "włączony" : "wyłączony" }}</span>
+            <BaseSwitch v-model="isDarkMode" background />
+            <span class="transition-colors duration-300 dark:text-dark-white">Tryb ciemny {{ isDarkMode ? "włączony" : "wyłączony" }}</span>
           </div>
           <nav class="flex flex-col p-6 px-8">
             <!-- Menu -->
@@ -108,17 +89,17 @@
             <h3 class="mt-10 mb-6 text-sm font-semibold uppercase transition-colors duration-300 dark:text-dark-white">Kontakt</h3>
             <ul class="flex flex-col items-start ml-2">
               <li v-for="item in contact" :key="item.id" class="flex mb-1 transition-colors duration-300 dark:text-dark-white last:mb-0">
-                <a
-                  aria-label="Contact"
-                  :href="item.link"
-                  class="px-4 py-1.5 bg-accent-light rounded dark:text-dark-neutral transition-colors duration-300 font-medium flex justify-start leading-4 gap-2 items-center text-sm"
+                <NuxtLink
+                  :to="item.link"
                   target="_blank"
+                  aria-label="Contact"
+                  class="px-4 py-1.5 bg-accent-light rounded dark:text-dark-neutral transition-colors duration-300 font-medium flex justify-start leading-4 gap-2 items-center text-sm"
                 >
                   <span>
                     <svg class="w-4 h-4 fill-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" v-html="item.icon"></svg>
                   </span>
                   <span>{{ item.name }}</span>
-                </a>
+                </NuxtLink>
               </li>
             </ul>
           </nav>
@@ -128,33 +109,47 @@
   </div>
 </template>
 <script setup lang="ts">
-const themeMode = ref("light");
+interface Menu {
+  id: number;
+  name: string;
+  link: string;
+}
+
+interface Contact {
+  id: number;
+  name: string;
+  link: string;
+  icon: string;
+}
+
 const isMenu = ref(false);
 const isBackgroundMenu = ref(false);
-const menu = ref([
+const isDarkMode = ref(false);
+
+const menu: Array<Menu> = [
   {
     id: 1,
     name: "Hello",
     link: "#hello",
   },
   {
-    id: 1,
+    id: 2,
     name: "O mnie",
     link: "#about-me",
   },
   {
-    id: 1,
+    id: 3,
     name: "Portfolio",
     link: "#portfolio",
   },
   {
-    id: 1,
+    id: 4,
     name: "Kontakt",
     link: "#contact",
   },
-]);
+];
 
-const contact = ref([
+const contact: Array<Contact> = [
   {
     id: 1,
     name: "GitHub",
@@ -173,49 +168,54 @@ const contact = ref([
                 d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
               />`,
   },
-]);
+];
+
+watch(isDarkMode, (newValue: boolean) => {
+  if (newValue) {
+    document.documentElement.classList.add("dark");
+    localStorage.setItem("theme", "dark");
+  } else {
+    document.documentElement.classList.remove("dark");
+    localStorage.setItem("theme", "light");
+  }
+});
+
+watch(isMenu, (newValue: boolean) => {
+  newValue ? document.body.classList.add("overflow-hidden") : document.body.classList.remove("overflow-hidden");
+});
 
 const toggleMenu = () => {
-  isMenu.value = !isMenu.value;
+  setTimeout(() => {
+    isMenu.value = !isMenu.value;
+  }, 100);
 };
+
 const hideMenu = () => {
   isMenu.value && (isMenu.value = false);
 };
-const scrollToSection = (link: any, navHeight = 52) => {
-  const el = document.querySelector(link);
+
+const scrollToSection = (link: string, navHeight: number = 52) => {
+  const el = document.querySelector(link)! as HTMLElement;
   window.scroll({ top: el.offsetTop - navHeight, behavior: "smooth" });
   hideMenu();
 };
 
-// ADD WATCH
+const toogleIsBackgroundMenu = () => {
+  window.pageYOffset > 50 ? (isBackgroundMenu.value = true) : (isBackgroundMenu.value = false);
+};
 
 onMounted(() => {
-  window.pageYOffset > 50 ? (isBackgroundMenu.value = true) : (isBackgroundMenu.value = false);
+  toogleIsBackgroundMenu();
   window.addEventListener("scroll", () => {
-    window.pageYOffset > 50 ? (isBackgroundMenu.value = true) : (isBackgroundMenu.value = false);
+    toogleIsBackgroundMenu();
   });
 
   if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
     document.documentElement.classList.add("dark");
-    themeMode.value = "dark";
+    isDarkMode.value = true;
   } else {
     document.documentElement.classList.remove("dark");
-    themeMode.value = "light";
+    isDarkMode.value = false;
   }
 });
-
-// watch: {
-//   isMenu(newValue) {
-//     newValue ? document.body.classList.add("overflow-hidden") : document.body.classList.remove("overflow-hidden");
-//   },
-//   themeMode(newValue) {
-//     if (newValue === "dark") {
-//       document.documentElement.classList.add("dark");
-//       localStorage.setItem("theme", "dark");
-//     } else {
-//       document.documentElement.classList.remove("dark");
-//       localStorage.setItem("theme", "light");
-//     }
-//   },
-// },
 </script>

@@ -29,7 +29,15 @@
   </section>
 </template>
 <script setup lang="ts">
-const bubbles: any = [
+interface Bubble {
+  id: number;
+  size: number;
+  left: number;
+  delay: number;
+  animation: number;
+}
+
+const bubbles: Array<Bubble> = [
   {
     id: 1,
     size: 5,

@@ -5,7 +5,7 @@
         <div
           class="absolute right-0 w-24 h-24 rounded-full -top-2 animation-move bg-gradient-to-br from-accent/70 via-accent-light/70 to-white backdrop-blur-md"
         ></div>
-        <BaseHeading class="mb-8" :left="true">{{ aboutMe.header }}</BaseHeading>
+        <BaseHeading left class="mb-8">{{ aboutMe.header }}</BaseHeading>
         <div class="flex flex-col">
           <div class="relative flex mb-7">
             <h1 class="pr-8 text-5xl font-medium leading-tight text-left transition-colors duration-300 dark:text-dark-white">
@@ -49,7 +49,20 @@
   </section>
 </template>
 <script setup lang="ts">
-const aboutMe = {
+interface AboutMe {
+  header: string;
+  title: string;
+  description: { id: number; paragraph: string }[];
+  quote: string;
+  authorOfQuote: string;
+}
+
+interface TimeLine {
+  id: number;
+  description: string;
+}
+
+const aboutMe: AboutMe = {
   header: "o mnie",
   title: "Trochę mojej historii",
   description: [
@@ -70,25 +83,25 @@ const aboutMe = {
   authorOfQuote: "Robert Fripp",
 };
 
-const timeLine = [
+const timeLine: Array<TimeLine> = [
   {
     id: 1,
     description: "2017 wrz - Rozpoczęcie przygody z Informatyką w Zespole szkół technicznych i branżowych w Brzesku",
   },
   {
-    id: 1,
+    id: 2,
     description: "2020 - Pierwszy komercyjny projekt",
   },
   {
-    id: 2,
+    id: 3,
     description: "2021 maj - Ukończenie technikum z wyróżnieniem",
   },
   {
-    id: 3,
+    id: 4,
     description: "2021 lip - Rozpoczęcie pierwszej pracy jako Frontend developer w firmie Maal",
   },
   {
-    id: 4,
+    id: 5,
     description: "2021 paź - Rozpoczęcie nauki w Wyższej Szkole Ekonomii i Informatyki w Krakowie",
   },
 ];

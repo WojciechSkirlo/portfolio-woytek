@@ -27,9 +27,9 @@ export default defineNuxtConfig({
     },
   },
 
-  // imports: {
-  //   dirs: ["@heroicons/vue/solid/index.js"],
-  // },
+  imports: {
+    dirs: ["ts"],
+  },
 
   css: ["~/assets/css/style.css"],
 });
