@@ -7,3 +7,23 @@
 body {
   @apply text-base scroll-smooth font-body;
 }
+
+/* width */
+::-webkit-scrollbar {
+  @apply lg:w-2;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  @apply lg:bg-white lg:dark:bg-dark-neutral;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  @apply lg:bg-accent lg:rounded-full;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  @apply lg:bg-accent-light;
+}
