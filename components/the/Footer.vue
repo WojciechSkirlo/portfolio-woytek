@@ -29,7 +29,7 @@
       <div class="flex items-center justify-end h-12 text-left font-extralight">
         <p class="text-xs">
           <a href="#" aria-label="Copyright" class="underline decoration-accent-light">Wojciech Skirło</a>
-          {{ `&copy;` }} 2022. Wszelkie prawa zastrzeżone.
+          {{ `&copy;` }} {{ dayjs().year() }}. Wszelkie prawa zastrzeżone.
         </p>
       </div>
     </div>
@@ -37,6 +37,8 @@
 </template>
 <script setup lang="ts">
 import * as HeroIcons from "@heroicons/vue/solid/index.js";
+import dayjs from "dayjs";
+
 interface FooterContact {
   id: number;
   icon: keyof typeof HeroIcons;

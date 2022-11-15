@@ -49,6 +49,8 @@
   </section>
 </template>
 <script setup lang="ts">
+import dayjs from "dayjs";
+
 interface AboutMe {
   header: string;
   title: string;
@@ -68,7 +70,8 @@ const aboutMe: AboutMe = {
   description: [
     {
       id: 1,
-      paragraph: `Tak właściwie to nazywam się <b>Skirło Wojciech</b>. Mam 21 lat. Pochodzę z niewielkiej miejscowości położonej 60 km od Krakowa.
+      paragraph: `Tak właściwie to nazywam się <b>Skirło Wojciech</b>. Mam ${dayjs().diff("2001-10-20", "years")}
+      lat. Pochodzę z niewielkiej miejscowości położonej 60 km od Krakowa.
                       Od najmłodszych lat interesuję się informatyką a w 2021 roku rozpocząłem naukę w Wyższej Szkole Ekonomii i Informatyki w Krakowie na kierunku informatyki stosowanej.
                       Z każdym dniem wzbogacam się o nowe umiejętności, dzięki czemu potrafię coraz więcej.`,
     },
