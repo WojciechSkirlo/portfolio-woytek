@@ -49,12 +49,12 @@
   </section>
 </template>
 <script setup lang="ts">
-import dayjs from "dayjs";
+const { $getAge } = useNuxtApp();
 
 interface AboutMe {
   header: string;
   title: string;
-  description: { id: number; paragraph: string }[];
+  description: Array<{ id: number; paragraph: string }>;
   quote: string;
   authorOfQuote: string;
 }
@@ -64,24 +64,14 @@ interface TimeLine {
   description: string;
 }
 
-const getMyAge = () => {
-  const age = dayjs().diff("2001-10-20", "years");
-  let suffix = "";
-
-  if (age === 1) suffix = "rok";
-  else if ((age > 14 || age <= 4) && age % 10 >= 2 && age % 10 <= 4) suffix = "lata";
-  else suffix = "lat";
-
-  return `${age} ${suffix}`;
-};
-
 const aboutMe: AboutMe = {
-  header: "o mnie",
+  header: "O mnie",
   title: "Trochę mojej historii",
   description: [
     {
       id: 1,
-      paragraph: `Tak właściwie to nazywam się <b>Skirło Wojciech</b>. Mam ${getMyAge()}. Pochodzę z niewielkiej miejscowości położonej 60 km od Krakowa.
+      paragraph: `Tak właściwie to nazywam się <b>Skirło Wojciech</b>. Mam ${$getAge("2001-10-20")}.
+        Pochodzę z niewielkiej miejscowości położonej 60 km od Krakowa.
                       Od najmłodszych lat interesuję się informatyką a w 2021 roku rozpocząłem naukę w Wyższej Szkole Ekonomii i Informatyki w Krakowie na kierunku informatyki stosowanej.
                       Z każdym dniem wzbogacam się o nowe umiejętności, dzięki czemu potrafię coraz więcej.`,
     },

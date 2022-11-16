@@ -4,12 +4,24 @@
   </div>
 </template>
 <script setup lang="ts">
-// import Scrollbar from "smooth-scrollbar";
-// import MeowPlugin from "meow-plugin";
+const { $getAge } = useNuxtApp();
 
-onMounted(() => {
-  // Scrollbar.use(MeowPlugin);
-  // Scrollbar.init(document.querySelector("[data-scrollbar]")!);
-  // console.log("scroll", Scrollbar);
+useHead({
+  htmlAttrs: {
+    lang: "pl_PL",
+  },
+  title: "Wojciech Skirło | Portfolio",
+  meta: [
+    { name: "viewport", content: "width=device-width, initial-scale=1" },
+    {
+      name: "description",
+      content: `Tak właściwie to nazywam się <b>Skirło Wojciech</b>. Mam ${$getAge("2001-10-20")}.
+        Pochodzę z niewielkiej miejscowości położonej 60 km od Krakowa.
+                      Od najmłodszych lat interesuję się informatyką a w 2021 roku rozpocząłem naukę w Wyższej Szkole Ekonomii i Informatyki w Krakowie na kierunku informatyki stosowanej.
+                      Z każdym dniem wzbogacam się o nowe umiejętności, dzięki czemu potrafię coraz więcej.`,
+    },
+  ],
+  link: [{ rel: "icon", type: "image/x-icon", href: "~/assets/favicon.ico" }],
+  noscript: [{ children: "Javascript is required" }],
 });
 </script>
