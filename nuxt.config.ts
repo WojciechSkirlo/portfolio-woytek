@@ -32,4 +32,8 @@ export default defineNuxtConfig({
   },
 
   css: ["~/assets/css/style.css"],
+
+  typescript: {
+    shim: false,
+  },
 });
