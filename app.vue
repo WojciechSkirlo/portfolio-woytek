@@ -8,14 +8,14 @@ const { $getAge } = useNuxtApp();
 
 useHead({
   htmlAttrs: {
-    lang: "pl_PL",
+    lang: "pl-PL",
   },
   title: "Wojciech Skirło | Portfolio",
   meta: [
     { name: "viewport", content: "width=device-width, initial-scale=1" },
     {
       name: "description",
-      content: `Tak właściwie to nazywam się <b>Skirło Wojciech</b>. Mam ${$getAge("2001-10-20")}.
+      content: `Tak właściwie to nazywam się Skirło Wojciech. Mam ${$getAge("2001-10-20")}.
         Pochodzę z niewielkiej miejscowości położonej 60 km od Krakowa.
                       Od najmłodszych lat interesuję się informatyką a w 2021 roku rozpocząłem naukę w Wyższej Szkole Ekonomii i Informatyki w Krakowie na kierunku informatyki stosowanej.
                       Z każdym dniem wzbogacam się o nowe umiejętności, dzięki czemu potrafię coraz więcej.`,
