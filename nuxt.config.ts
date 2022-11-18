@@ -43,9 +43,6 @@ export default defineNuxtConfig({
       sizes: [192, 512],
       source: "./public/android-chrome-192x192.png",
     },
-    workbox: {
-      templatePath: "~/path/to/your/worker.js",
-    },
   },
 
   css: ["~/assets/css/style.css"],
