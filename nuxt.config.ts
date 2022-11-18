@@ -15,8 +15,9 @@ export default defineNuxtConfig({
 
   pwa: {
     manifest: {
-      name: "Wojciech Skirło | Portfolio",
-      short_name: "Wojciech Skirło",
+      id: "2",
+      name: "Woytek | Portfolio",
+      short_name: "Woytek",
       description: `Tak właściwie to nazywam się Skirło Wojciech.
       Pochodzę z niewielkiej miejscowości położonej 60 km od Krakowa.
                     Od najmłodszych lat interesuję się informatyką a w 2021 roku rozpocząłem naukę w Wyższej Szkole Ekonomii i Informatyki w Krakowie na kierunku informatyki stosowanej.
@@ -25,12 +26,22 @@ export default defineNuxtConfig({
       icons: [
         {
           purpose: "maskable",
-          src: "icon.png",
+          src: "./public/android-chrome-192x192.png",
+          sizes: "192x192",
+          type: "image/png",
+        },
+        {
+          purpose: "any",
+          src: "./public/android-chrome-512x512.png",
           sizes: "512x512",
           type: "image/png",
         },
       ],
-      id: "1",
+    },
+    icon: {
+      fileName: "maskable_icon_x192",
+      sizes: [192, 512],
+      source: "./public/android-chrome-192x192.png",
     },
   },
 
