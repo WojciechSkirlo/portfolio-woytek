@@ -55,7 +55,7 @@ const works: Array<Work> = [
   {
     id: 6,
     name: "check messages",
-    img: "thumbnail-portfolio",
+    img: "thumbnail-check-messages",
     live: "https://resplendent-sunflower-035ed8.netlify.app/",
     github: "https://github.com/WojciechSkirlo/check-messages",
     techStack: ["html", "css", "tailwindcss", "js", "ts", "vue"],
