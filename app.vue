@@ -5,9 +5,6 @@
 </template>
 <script setup lang="ts">
 const { $getAge } = useNuxtApp();
-
-// console.log("route", useRoute());
-
 useHead({
   htmlAttrs: {
     lang: "pl-PL",
@@ -32,6 +29,7 @@ useHead({
     { property: "og:locale", content: "pl_PL" },
     { property: "og:image", content: "https://woytek-portfolio.netlify.app/android-chrome-512x512.png" },
     { property: "og:site:name", content: "Wojciech Skirło | Portfolio" },
+    { property: "twitter:card", content: "summary" },
   ],
   link: [{ rel: "icon", type: "image/x-icon", href: "~/assets/favicon.ico" }],
   noscript: [{ children: "Javascript is required" }],
