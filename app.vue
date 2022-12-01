@@ -12,6 +12,7 @@ useHead({
   title: "Wojciech Skirło | Portfolio",
   meta: [
     { name: "viewport", content: "width=device-width, initial-scale=1" },
+    { name: "apple-mobile-web-app-title", content: "Woytek" },
     {
       name: "description",
       content: `Tak właściwie to nazywam się Skirło Wojciech. Mam ${$getAge(
@@ -30,7 +31,6 @@ useHead({
     { property: "og:image", content: "https://woytek-portfolio.netlify.app/android-chrome-512x512.png" },
     { property: "og:site_name", content: "Wojciech Skirło | Portfolio" },
     { property: "twitter:card", content: "summary" },
-    { property: "apple-mobile-web-app-title", content: "Woytek" },
   ],
   link: [{ rel: "icon", type: "image/x-icon", href: "~/assets/favicon.ico" }],
   noscript: [{ children: "Javascript is required" }],
