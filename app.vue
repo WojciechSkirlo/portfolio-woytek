@@ -28,7 +28,7 @@ useHead({
     { property: "og:type", content: "website" },
     { property: "og:locale", content: "pl_PL" },
     { property: "og:image", content: "https://woytek-portfolio.netlify.app/android-chrome-512x512.png" },
-    { property: "og:site:name", content: "Wojciech Skirło | Portfolio" },
+    { property: "og:site_name", content: "Wojciech Skirło | Portfolio" },
     { property: "twitter:card", content: "summary" },
   ],
   link: [{ rel: "icon", type: "image/x-icon", href: "~/assets/favicon.ico" }],
