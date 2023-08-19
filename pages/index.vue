@@ -1,10 +1,8 @@
 <template>
-  <div>
-    <TheHeader />
-    <TheHello />
-    <TheAboutMe />
-    <ThePortfolio />
-    <TheFooter />
-    <ToUp />
-  </div>
+    <div>
+        <TheHello />
+        <TheAboutMe />
+        <ThePortfolio />
+        <ToUp />
+    </div>
 </template>
