@@ -3,6 +3,7 @@
         <div class="container flex flex-col px-4 mx-auto">
             <div class="flex flex-col py-12 pb-6">
                 <BaseHeading left class="mb-12">Kontakt</BaseHeading>
+                
                 <!-- Contact -->
                 <div class="flex flex-col gap-5 mb-8">
                     <div v-for="item in contact" :key="item.id" class="flex items-center text-sm font-extralight">
@@ -11,6 +12,7 @@
                         <a :href="item.link" aria-label="Contact" class="hover:underline">{{ item.value }}</a>
                     </div>
                 </div>
+                
                 <!-- Social media -->
                 <div class="flex items-center gap-5 text-black">
                     <NuxtLink
@@ -36,7 +38,7 @@
             <div class="flex items-center justify-end h-12 text-left font-extralight">
                 <p class="text-xs">
                     <a href="#" aria-label="Copyright" class="underline decoration-accent-light">Wojciech Skirło</a>
-                    {{ `&copy;` }} {{ dayjs().year() }}. Wszelkie prawa zastrzeżone.
+                    {{ `&copy;` }} {{ year }}. Wszelkie prawa zastrzeżone.
                 </p>
             </div>
         </div>
@@ -98,4 +100,6 @@ const socialMedia: Array<FooterSocialMedia> = [
         link: "https://github.com/WojciechSkirlo"
     }
 ];
+
+const year = computed(() => dayjs().year());
 </script>

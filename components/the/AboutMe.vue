@@ -62,8 +62,6 @@
     </section>
 </template>
 <script setup lang="ts">
-const { $getAge } = useNuxtApp();
-
 interface AboutMe {
     header: string;
     title: string;
@@ -83,7 +81,7 @@ const aboutMe: AboutMe = {
     description: [
         {
             id: 1,
-            paragraph: `Tak właściwie to nazywam się <b>Skirło Wojciech</b>. Mam ${$getAge("2001-10-20")}.
+            paragraph: `Tak właściwie to nazywam się <b>Skirło Wojciech</b>. Mam ${getAge("2001-10-20")}.
         Pochodzę z niewielkiej miejscowości położonej 60 km od Krakowa.
                       Od najmłodszych lat interesuję się informatyką a w 2021 roku rozpocząłem naukę w Wyższej Szkole Ekonomii i Informatyki w Krakowie na kierunku informatyki stosowanej.
                       Z każdym dniem wzbogacam się o nowe umiejętności, dzięki czemu potrafię coraz więcej.`
@@ -126,6 +124,7 @@ const timeLine: Array<TimeLine> = [
 .animation-move {
     animation: animation-move 9s infinite;
 }
+
 @keyframes animation-move {
     50% {
         transform: translateY(-20px);

@@ -1,10 +1,9 @@
 <template>
-    <div class="relative h-screen">
+    <NuxtLayout>
         <NuxtPage />
-    </div>
+    </NuxtLayout>
 </template>
 <script setup lang="ts">
-const { $getAge } = useNuxtApp();
 useHead({
     htmlAttrs: {
         lang: "pl-PL"
@@ -15,14 +14,14 @@ useHead({
         { name: "apple-mobile-web-app-title", content: "Woytek" },
         {
             name: "description",
-            content: `Tak właściwie to nazywam się Skirło Wojciech. Mam ${$getAge(
+            content: `Tak właściwie to nazywam się Skirło Wojciech. Mam ${getAge(
                 "2001-10-20"
             )}. Pochodzę z niewielkiej miejscowości położonej 60 km od Krakowa. Z każdym dniem wzbogacam się o nowe umiejętności, dzięki czemu potrafię coraz więcej.`
         },
         { property: "og:title", content: "Wojciech Skirło | Portfolio" },
         {
             property: "og:description",
-            content: `Tak właściwie to nazywam się Skirło Wojciech. Mam ${$getAge(
+            content: `Tak właściwie to nazywam się Skirło Wojciech. Mam ${getAge(
                 "2001-10-20"
             )}. Pochodzę z niewielkiej miejscowości położonej 60 km od Krakowa. Z każdym dniem wzbogacam się o nowe umiejętności, dzięki czemu potrafię coraz więcej.`
         },

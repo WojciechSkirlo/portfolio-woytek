@@ -11,4 +11,12 @@ declare global {
         github?: string;
         techStack?: Array<Technology>;
     }
+
+    interface Bubble {
+        id: number;
+        size: number;
+        left: number;
+        delay: number;
+        animation: number;
+    }
 }
