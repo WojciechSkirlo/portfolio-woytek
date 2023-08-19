@@ -12,7 +12,7 @@
       />
     </div>
     <div
-      class="absolute top-0 right-0 flex items-center justify-center w-full h-full p-4 transition-transform duration-500 translate-x-full rounded-lg bg-white/50 dark:bg-dark-neutral/60 backdrop-blur-md"
+      class="absolute top-0 right-0 flex items-center justify-center w-full h-full p-4 transition-transform duration-500 rounded-lg bg-white/50 dark:bg-dark-neutral/60 backdrop-blur-md"
       :class="isInfo ? 'translate-x-0' : 'translate-x-full'"
       @click="toggleInfo(false)"
     >
