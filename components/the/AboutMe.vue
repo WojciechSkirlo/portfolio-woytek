@@ -100,7 +100,7 @@ const aboutMe: AboutMe = {
 const timeLine: Array<TimeLine> = [
     {
         id: 1,
-        description: "2017 wrz - Rozpoczęcie przygody z Informatyką w Zespole szkół technicznych i branżowych w Brzesku"
+        description: "2017 wrz - Zapoczątkowanie przygody z Informatyką w Zespole szkół technicznych i branżowych w Brzesku"
     },
     {
         id: 2,
@@ -108,15 +108,19 @@ const timeLine: Array<TimeLine> = [
     },
     {
         id: 3,
-        description: "2021 maj - Ukończenie technikum z wyróżnieniem"
+        description: "2021 lip - Pierwsza praca jako Frontend developer w firmie Maal"
     },
     {
         id: 4,
-        description: "2021 lip - Rozpoczęcie pierwszej pracy jako Frontend developer w firmie Maal"
+        description: "2021 paź - Rozpoczęcie studiów na Wyższej Szkole Ekonomii i Informatyki w Krakowie"
     },
     {
         id: 5,
-        description: "2021 paź - Rozpoczęcie nauki w Wyższej Szkole Ekonomii i Informatyki w Krakowie"
+        description: "2023 lut - Nowa Praca w firmie Ideo"
+    },
+    {
+        id: 6,
+        description: "2023 sier - Mentor GoIT - Dziel się wiedzą, inspiruj przyszłość"
     }
 ];
 </script>
