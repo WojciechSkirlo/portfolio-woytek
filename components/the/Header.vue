@@ -1,7 +1,7 @@
 <template>
     <div>
         <div
-            class="fixed top-0 left-0 z-40 items-center justify-end hidden w-full transition-all duration-500 lg:flex"
+            class="fixed top-0 left-0 z-40 items-center justify-end hidden w-full transition-colors duration-500 lg:flex"
             :class="isBackgroundMenu && ['bg-white/70', 'dark:bg-dark-neutral/70', 'backdrop-blur-md']"
         >
             <div class="flex items-center gap-6">
