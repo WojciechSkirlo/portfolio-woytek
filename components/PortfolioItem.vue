@@ -8,7 +8,7 @@
             @mouseenter="toggleInfo(true)"
         >
             <img
-                :src="`/works/${item.img}.png`"
+                :src="`/works/${item.img}`"
                 :alt="item.name"
                 class="object-contain w-32 h-32 transition-transform duration-500"
                 :class="isInfo && 'scale-110'"
@@ -41,9 +41,9 @@
                         aria-label="Show live"
                         class="flex items-center group"
                     >
-                        <span class="font-medium transition-colors duration-300 dark:text-dark-white"
-                            >Sprawdź Live</span
-                        >
+                        <span class="font-medium transition-colors duration-300 dark:text-dark-white">
+                            Sprawdź Live
+                        </span>
                         <svg
                             class="ml-2 transition-colors duration-300 animate-bounce-right group-hover:animate-bounce-right-faster dark:fill-dark-white"
                             xmlns="http://www.w3.org/2000/svg"
@@ -92,6 +92,7 @@
         </div>
     </div>
 </template>
+
 <script setup lang="ts">
 defineProps<{
     item: Work;

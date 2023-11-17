@@ -1,6 +1,6 @@
 export {};
 
-type Technology = "html" | "css" | "sass" | "tailwindcss" | "js" | "ts" | "vue" | "nuxt" | "jquery" | "php" | "pwa";
+type Technology = "html" | "css" | "sass" | "tailwindcss" | "js" | "ts" | "vue" | "nuxt" | "jquery" | "php" | "pwa" | "react";
 
 declare global {
     interface Work {

@@ -120,7 +120,7 @@ const timeLine: Array<TimeLine> = [
     },
     {
         id: 6,
-        description: "2023 sier - Mentor GoIT - Dziel się wiedzą, inspiruj przyszłość"
+        description: "2023 paź - Mentor GoIT - Dziel się wiedzą, inspiruj przyszłość"
     }
 ];
 </script>

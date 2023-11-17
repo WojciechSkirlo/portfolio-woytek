@@ -19,64 +19,64 @@
 const works: Array<Work> = [
     {
         id: 1,
+        name: "spotify-clone",
+        img: "thumbnail-spotify-clone.png",
+        github: "https://github.com/spotify-copy-app/spotify-clone",
+        live: "https://spotify-clone-application.netlify.app/",
+        techStack: ["html", "css", "tailwindcss", "ts", "react"]
+    },
+    {
+        id: 2,
+        name: "check messages",
+        img: "thumbnail-check-messages.png",
+        live: "https://resplendent-sunflower-035ed8.netlify.app/",
+        github: "https://github.com/WojciechSkirlo/check-messages",
+        techStack: ["html", "css", "tailwindcss", "ts", "vue"]
+    },
+    {
+        id: 3,
         name: "projectq12",
-        img: "thumbnail-projectq12",
+        img: "thumbnail-projectq12.png",
         github: "https://github.com/WojciechSkirlo/projectq12",
         techStack: ["html", "css", "js", "jquery", "php"]
     },
     {
-        id: 2,
+        id: 4,
         name: "gmw-spaw",
-        img: "thumbnail-gmwspaw",
+        img: "thumbnail-gmwspaw.png",
         live: "https://gmw-spaw.com/",
         techStack: ["html", "css", "sass", "js", "jquery", "php"]
     },
     {
-        id: 3,
+        id: 5,
         name: "Caesar cipher",
-        img: "thumbnail-cc",
+        img: "thumbnail-cc.png",
         live: "https://voluble-snickerdoodle-37831a.netlify.app/",
         github: "https://github.com/WojciechSkirlo/caesar-cipher",
-        techStack: ["html", "css", "tailwindcss", "js", "ts", "vue", "pwa"]
+        techStack: ["html", "css", "tailwindcss", "ts", "vue", "pwa"]
     },
     {
-        id: 4,
+        id: 6,
         name: "emulator intel 8086",
-        img: "thumbnail-portfolio",
+        img: "thumbnail-portfolio.png",
         live: "https://merry-granita-33b312.netlify.app/",
         github: "https://github.com/WojciechSkirlo/architecture-of-computer-systems-project",
         techStack: ["html", "css", "tailwindcss", "js", "vue"]
     },
     {
-        id: 5,
-        name: "najmcar",
-        img: "thumbnail-najmcar",
-        live: "http://najmcar.pl/",
-        techStack: ["html", "css", "sass", "jquery"]
-    },
-    {
-        id: 6,
-        name: "check messages",
-        img: "thumbnail-check-messages",
-        live: "https://resplendent-sunflower-035ed8.netlify.app/",
-        github: "https://github.com/WojciechSkirlo/check-messages",
-        techStack: ["html", "css", "tailwindcss", "js", "ts", "vue"]
-    },
-    {
         id: 7,
         name: "warszawa45",
-        img: "thumbnail-warszawa45",
+        img: "thumbnail-warszawa45.png",
         live: "https://wojciechskirlo.github.io/warszawa45/",
         github: "https://github.com/WojciechSkirlo/warszawa45",
         techStack: ["html", "css", "sass", "js", "jquery"]
     },
     {
         id: 8,
-        name: "rick&morty",
-        img: "thumbnail-rick-and-morty",
-        live: "https://golden-bavarois-55b6c8.netlify.app/",
-        github: "https://github.com/WojciechSkirlo/rick-morty",
-        techStack: ["html", "css", "tailwindcss", "js", "vue"]
-    }
+        name: "najmcar",
+        img: "thumbnail-najmcar.png",
+        live: "http://najmcar.pl/",
+        techStack: ["html", "css", "sass", "jquery"]
+    },
 ];
 </script>
