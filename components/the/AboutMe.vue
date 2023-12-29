@@ -1,3 +1,68 @@
+<script setup lang="ts">
+interface AboutMe {
+    header: string;
+    title: string;
+    description: Array<{ id: number; paragraph: string }>;
+    quote: string;
+    authorOfQuote: string;
+}
+
+interface TimeLine {
+    id: number;
+    description: string;
+}
+
+const aboutMe: AboutMe = {
+    header: "O mnie",
+    title: "Trochę mojej historii",
+    description: [
+        {
+            id: 1,
+            paragraph: `Tak właściwie to nazywam się <b>Skirło Wojciech</b>. Mam ${getAge("2001-10-20")}.
+        Pochodzę z niewielkiej miejscowości położonej 60 km od Krakowa.
+                      Od najmłodszych lat interesuję się informatyką a w 2021 roku rozpocząłem naukę w Wyższej Szkole Ekonomii i Informatyki w Krakowie na kierunku informatyki stosowanej.
+                      Z każdym dniem wzbogacam się o nowe umiejętności, dzięki czemu potrafię coraz więcej.`
+        },
+        {
+            id: 2,
+            paragraph: `Aktualnie pracuje jako <b>Frontend Developer</b>. W wolnym czasie zajmuję się tworzeniem muzyki jak i jej wykonywaniem. Lubię spotykać się ze
+                      znajomymi, grać na instrumentach takich jak gitara czy pianino. Ogólnie
+                      to nie wyobrażam sobie świata bez muzyki.`
+        }
+    ],
+    quote: "Music is the wine that fills the cup of silence",
+    authorOfQuote: "Robert Fripp"
+};
+
+const timeLine: Array<TimeLine> = [
+    {
+        id: 1,
+        description:
+            "2017 wrz - Zapoczątkowanie przygody z Informatyką w Zespole szkół technicznych i branżowych w Brzesku"
+    },
+    {
+        id: 2,
+        description: "2020 - Pierwszy komercyjny projekt"
+    },
+    {
+        id: 3,
+        description: "2021 lip - Pierwsza praca jako Frontend developer w firmie Maal"
+    },
+    {
+        id: 4,
+        description: "2021 paź - Rozpoczęcie studiów na Wyższej Szkole Ekonomii i Informatyki w Krakowie"
+    },
+    {
+        id: 5,
+        description: "2023 lut - Nowa Praca w firmie Ideo"
+    },
+    {
+        id: 6,
+        description: "2023 paź - Mentor GoIT - Dziel się wiedzą, inspiruj przyszłość"
+    }
+];
+</script>
+
 <template>
     <section id="about-me" class="w-full transition-colors duration-300 bg-white dark:bg-dark-neutral">
         <BaseWrapper class="items-center gap-10 lg:gap-14 md:flex-row">
@@ -61,69 +126,7 @@
         </BaseWrapper>
     </section>
 </template>
-<script setup lang="ts">
-interface AboutMe {
-    header: string;
-    title: string;
-    description: Array<{ id: number; paragraph: string }>;
-    quote: string;
-    authorOfQuote: string;
-}
 
-interface TimeLine {
-    id: number;
-    description: string;
-}
-
-const aboutMe: AboutMe = {
-    header: "O mnie",
-    title: "Trochę mojej historii",
-    description: [
-        {
-            id: 1,
-            paragraph: `Tak właściwie to nazywam się <b>Skirło Wojciech</b>. Mam ${getAge("2001-10-20")}.
-        Pochodzę z niewielkiej miejscowości położonej 60 km od Krakowa.
-                      Od najmłodszych lat interesuję się informatyką a w 2021 roku rozpocząłem naukę w Wyższej Szkole Ekonomii i Informatyki w Krakowie na kierunku informatyki stosowanej.
-                      Z każdym dniem wzbogacam się o nowe umiejętności, dzięki czemu potrafię coraz więcej.`
-        },
-        {
-            id: 2,
-            paragraph: `Aktualnie pracuje jako <b>Frontend Developer</b>. W wolnym czasie zajmuję się tworzeniem muzyki jak i jej wykonywaniem. Lubię spotykać się ze
-                      znajomymi, grać na instrumentach takich jak gitara czy pianino. Ogólnie
-                      to nie wyobrażam sobie świata bez muzyki.`
-        }
-    ],
-    quote: "Music is the wine that fills the cup of silence",
-    authorOfQuote: "Robert Fripp"
-};
-
-const timeLine: Array<TimeLine> = [
-    {
-        id: 1,
-        description: "2017 wrz - Zapoczątkowanie przygody z Informatyką w Zespole szkół technicznych i branżowych w Brzesku"
-    },
-    {
-        id: 2,
-        description: "2020 - Pierwszy komercyjny projekt"
-    },
-    {
-        id: 3,
-        description: "2021 lip - Pierwsza praca jako Frontend developer w firmie Maal"
-    },
-    {
-        id: 4,
-        description: "2021 paź - Rozpoczęcie studiów na Wyższej Szkole Ekonomii i Informatyki w Krakowie"
-    },
-    {
-        id: 5,
-        description: "2023 lut - Nowa Praca w firmie Ideo"
-    },
-    {
-        id: 6,
-        description: "2023 paź - Mentor GoIT - Dziel się wiedzą, inspiruj przyszłość"
-    }
-];
-</script>
 <style>
 .animation-move {
     animation: animation-move 9s infinite;

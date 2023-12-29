@@ -1,3 +1,15 @@
+<script setup lang="ts">
+defineProps<{
+    item: Work;
+}>();
+
+const isInfo = ref(false);
+
+const toggleInfo = (param: boolean = false) => {
+    isInfo.value = param;
+};
+</script>
+
 <template>
     <div
         class="relative w-full overflow-hidden sm:w-[calc(50%-10px)] lg:w-[calc(33%-11px)] 2xl:w-[calc(25%-15px)] aspect-square"
@@ -92,15 +104,3 @@
         </div>
     </div>
 </template>
-
-<script setup lang="ts">
-defineProps<{
-    item: Work;
-}>();
-
-const isInfo = ref(false);
-
-const toggleInfo = (param: boolean = false) => {
-    isInfo.value = param;
-};
-</script>

@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const bubbles = getBubbles();
+</script>
+
 <template>
     <section
         id="hello"
@@ -30,6 +34,3 @@
         </div>
     </section>
 </template>
-<script setup lang="ts">
-const bubbles = getBubbles();
-</script>

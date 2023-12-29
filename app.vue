@@ -1,8 +1,3 @@
-<template>
-    <NuxtLayout>
-        <NuxtPage />
-    </NuxtLayout>
-</template>
 <script setup lang="ts">
 useHead({
     htmlAttrs: {
@@ -35,3 +30,9 @@ useHead({
     noscript: [{ children: "Javascript is required" }]
 });
 </script>
+
+<template>
+    <NuxtLayout>
+        <NuxtPage />
+    </NuxtLayout>
+</template>

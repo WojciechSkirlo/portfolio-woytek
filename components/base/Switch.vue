@@ -1,3 +1,14 @@
+<script setup lang="ts">
+defineEmits<{
+    (e: "update:modelValue", value: boolean): void;
+}>();
+
+defineProps<{
+    modelValue: boolean;
+    background?: boolean;
+}>();
+</script>
+
 <template>
     <button
         type="button"
@@ -12,13 +23,3 @@
         ></div>
     </button>
 </template>
-<script setup lang="ts">
-defineEmits<{
-    (e: "update:modelValue", value: boolean): void;
-}>();
-
-defineProps<{
-    modelValue: boolean;
-    background?: boolean;
-}>();
-</script>

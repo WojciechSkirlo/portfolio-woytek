@@ -1,3 +1,26 @@
+<script setup lang="ts">
+const isToTop = ref(false);
+
+const scrollToTop = () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+};
+
+const toggleIsToTop = () => {
+    window.pageYOffset > 400 ? (isToTop.value = true) : (isToTop.value = false);
+};
+
+onMounted(() => {
+    toggleIsToTop();
+    
+    window.addEventListener("scroll", () => {
+        toggleIsToTop();
+    });
+});
+</script>
+
 <template>
     <Transition
         enter-active-class="transition-opacity duration-500"
@@ -18,24 +41,3 @@
         </button>
     </Transition>
 </template>
-<script setup lang="ts">
-const isToTop = ref(false);
-
-const scrollToTop = () => {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-};
-
-const toggleIsToTop = () => {
-    window.pageYOffset > 400 ? (isToTop.value = true) : (isToTop.value = false);
-};
-
-onMounted(() => {
-    toggleIsToTop();
-    window.addEventListener("scroll", () => {
-        toggleIsToTop();
-    });
-});
-</script>
