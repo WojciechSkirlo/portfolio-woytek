@@ -36,8 +36,8 @@ onMounted(() => {
             @click="scrollToTop"
         >
             <BaseIcon name="ArrowNarrowUpIcon" class="text-white" smaller />
-            <span class="mt-1.5">to</span>
-            <span>up</span>
+            <span class="mt-1.5">{{ $t("to") }}</span>
+            <span>{{ $t("up") }}</span>
         </button>
     </Transition>
 </template>

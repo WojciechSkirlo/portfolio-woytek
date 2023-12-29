@@ -60,19 +60,19 @@ const works: Array<Work> = [
         img: "thumbnail-najmcar.png",
         live: "http://najmcar.pl/",
         techStack: ["html", "css", "sass", "jquery"]
-    },
+    }
 ];
 </script>
 
 <template>
     <section id="portfolio" class="w-full transition-colors duration-300 bg-white dark:bg-dark-neutral">
         <BaseWrapper>
-            <BaseHeading center class="mb-8">Portfolio</BaseHeading>
+            <BaseHeading center class="mb-8">{{ $t("Portfolio") }}</BaseHeading>
             <p
                 class="px-12 mb-5 text-sm text-center transition-colors duration-300 font-extralight dark:text-dark-grey"
             >
-                <span class="hidden lg:inline">Najedź na pracę, aby poznać więcej szczegółów</span>
-                <span class="lg:hidden">Naciśnij na pracę, aby poznać więcej szczegółów</span>
+                <span class="hidden lg:inline">{{ $t("Hover over the work for more details") }}</span>
+                <span class="lg:hidden">{{ $t("Tap on the work for more details") }}</span>
                 <BaseIcon name="CursorClickIcon" class="inline-block ml-2" />
             </p>
             <div class="flex flex-wrap justify-center w-full gap-5">

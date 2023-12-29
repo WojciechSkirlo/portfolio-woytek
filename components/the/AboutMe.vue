@@ -12,22 +12,25 @@ interface TimeLine {
     description: string;
 }
 
+const { t } = useI18n();
+
 const aboutMe: AboutMe = {
-    header: "O mnie",
-    title: "Trochę mojej historii",
+    header: t("About me"),
+    title: t("A bit of my story"),
     description: [
         {
             id: 1,
-            paragraph: `Tak właściwie to nazywam się <b>Skirło Wojciech</b>. Mam ${getAge("2001-10-20")}.
-        Pochodzę z niewielkiej miejscowości położonej 60 km od Krakowa.
-                      Od najmłodszych lat interesuję się informatyką a w 2021 roku rozpocząłem naukę w Wyższej Szkole Ekonomii i Informatyki w Krakowie na kierunku informatyki stosowanej.
-                      Z każdym dniem wzbogacam się o nowe umiejętności, dzięki czemu potrafię coraz więcej.`
+            paragraph: `${t("Actually, my name is")} <b>Skirło Wojciech</b>. ${t("I'm")} ${getAge("2001-10-20")}.
+            ${t(
+                "I come from a small town 60 km from Cracow. From an early age, I have been interested in computer science and in 2021 I started studying applied computer science at the Collage of Economics and Computer Science in Cracow. Every day I enrich myself with new skills, so I can do more and more."
+            )}`
         },
         {
             id: 2,
-            paragraph: `Aktualnie pracuje jako <b>Frontend Developer</b>. W wolnym czasie zajmuję się tworzeniem muzyki jak i jej wykonywaniem. Lubię spotykać się ze
-                      znajomymi, grać na instrumentach takich jak gitara czy pianino. Ogólnie
-                      to nie wyobrażam sobie świata bez muzyki.`
+            paragraph: `${t("I am currently working as a")} <b>Frontend Developer</b>. 
+            ${t(
+                "In my free time I am involved in creating music as well as performing it. I enjoy hanging out with friends, playing instruments such as guitar and piano. In general, I can't imagine the world without music."
+            )}`
         }
     ],
     quote: "Music is the wine that fills the cup of silence",
@@ -37,28 +40,23 @@ const aboutMe: AboutMe = {
 const timeLine: Array<TimeLine> = [
     {
         id: 1,
-        description:
-            "2017 wrz - Zapoczątkowanie przygody z Informatyką w Zespole szkół technicznych i branżowych w Brzesku"
+        description: t("2020 - First commercial project")
     },
     {
         id: 2,
-        description: "2020 - Pierwszy komercyjny projekt"
+        description: t("2021 jul - First job as Frontend developer at Maal company")
     },
     {
         id: 3,
-        description: "2021 lip - Pierwsza praca jako Frontend developer w firmie Maal"
+        description: t("2021 oct - Starting studies at the Collage of Economics and Computer Science in Cracow")
     },
     {
         id: 4,
-        description: "2021 paź - Rozpoczęcie studiów na Wyższej Szkole Ekonomii i Informatyki w Krakowie"
+        description: t("2023 feb - New job at Ideo company")
     },
     {
         id: 5,
-        description: "2023 lut - Nowa Praca w firmie Ideo"
-    },
-    {
-        id: 6,
-        description: "2023 paź - Mentor GoIT - Dziel się wiedzą, inspiruj przyszłość"
+        description: t("2023 oct - GoIT Mentor - Share knowledge, inspire the future")
     }
 ];
 </script>
@@ -127,7 +125,7 @@ const timeLine: Array<TimeLine> = [
     </section>
 </template>
 
-<style>
+<style scoped>
 .animation-move {
     animation: animation-move 9s infinite;
 }

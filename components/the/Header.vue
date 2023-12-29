@@ -12,6 +12,8 @@ interface Contact {
     icon: string;
 }
 
+const { t } = useI18n();
+
 const isMenu = ref(false);
 const isBackgroundMenu = ref(false);
 const isDarkMode = ref(false);
@@ -19,22 +21,22 @@ const isDarkMode = ref(false);
 const menu: Array<Menu> = [
     {
         id: 1,
-        name: "Hello",
+        name: t("Hello"),
         link: "#hello"
     },
     {
         id: 2,
-        name: "O mnie",
+        name: t("About me"),
         link: "#about-me"
     },
     {
         id: 3,
-        name: "Portfolio",
+        name: t("Portfolio"),
         link: "#portfolio"
     },
     {
         id: 4,
-        name: "Kontakt",
+        name: t("Contact"),
         link: "#contact"
     }
 ];
@@ -51,7 +53,7 @@ const contact: Array<Contact> = [
     },
     {
         id: 1,
-        name: "Likedin",
+        name: "Linkedin",
         link: "https://www.linkedin.com/in/wojciech-skir%C5%82o-54861b213/",
         icon: `<!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
               <path
@@ -143,7 +145,7 @@ onMounted(() => {
                         :to="item.link"
                         target="_blank"
                         class="flex items-center justify-center h-16 group"
-                        aria-label="Contact"
+                        :aria-label="$t('Contact')"
                     >
                         <svg
                             class="w-4 h-4 fill-black"
@@ -156,7 +158,7 @@ onMounted(() => {
                     <NuxtLink
                         href="mailto:wojciechskiro@gmail.com"
                         class="flex items-center justify-center w-16 h-16 bg-black"
-                        aria-label="Contact"
+                        :aria-label="$t('Contact')"
                     >
                         <BaseIcon name="PaperAirplaneIcon" class="text-white rotate-45" bigger />
                     </NuxtLink>
@@ -202,16 +204,16 @@ onMounted(() => {
                 >
                     <div class="flex items-center justify-start w-full gap-4 py-[17px] px-5">
                         <BaseSwitch v-model="isDarkMode" background />
-                        <span class="transition-colors duration-300 dark:text-dark-white"
-                            >Tryb ciemny {{ isDarkMode ? "włączony" : "wyłączony" }}</span
-                        >
+                        <span class="transition-colors duration-300 dark:text-dark-white">
+                            {{ $t("Dark mode") }} {{ isDarkMode ? $t("on") : $t("off") }}
+                        </span>
                     </div>
                     <nav class="flex flex-col p-6 px-8">
                         <!-- Menu -->
                         <h3
                             class="mb-6 text-sm font-semibold uppercase transition-colors duration-300 dark:text-dark-white"
                         >
-                            Menu
+                            {{ $t("Menu") }}
                         </h3>
                         <ul class="ml-2">
                             <li
@@ -233,7 +235,7 @@ onMounted(() => {
                         <h3
                             class="mt-10 mb-6 text-sm font-semibold uppercase transition-colors duration-300 dark:text-dark-white"
                         >
-                            Kontakt
+                            {{ $t("Contact") }}
                         </h3>
                         <ul class="flex flex-col items-start ml-2">
                             <li

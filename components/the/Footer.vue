@@ -17,18 +17,20 @@ interface FooterSocialMedia {
     link: string;
 }
 
+const { t } = useI18n();
+
 const contact: Array<FooterContact> = [
     {
         id: 1,
         icon: "ChatAlt2Icon",
-        key: "Email",
+        key: t("Email"),
         value: "wojciechskiro@gmail.com",
         link: "mailto:wojciechskiro@gmail.com"
     },
     {
         id: 2,
         icon: "PhoneIcon",
-        key: "Nr tel",
+        key: t("Phone number"),
         value: "+48 733-789-494",
         link: "tel:+48733789494"
     }
@@ -62,8 +64,8 @@ const year = computed(() => dayjs().year());
     <footer id="contact" class="w-full text-white bg-black">
         <div class="container flex flex-col px-4 mx-auto">
             <div class="flex flex-col py-12 pb-6">
-                <BaseHeading left class="mb-12">Kontakt</BaseHeading>
-                
+                <BaseHeading left class="mb-12">{{ $t("Contact") }}</BaseHeading>
+
                 <!-- Contact -->
                 <div class="flex flex-col gap-5 mb-8">
                     <div v-for="item in contact" :key="item.id" class="flex items-center text-sm font-extralight">
@@ -72,7 +74,7 @@ const year = computed(() => dayjs().year());
                         <a :href="item.link" aria-label="Contact" class="hover:underline">{{ item.value }}</a>
                     </div>
                 </div>
-                
+
                 <!-- Social media -->
                 <div class="flex items-center gap-5 text-black">
                     <NuxtLink
@@ -98,7 +100,7 @@ const year = computed(() => dayjs().year());
             <div class="flex items-center justify-end h-12 text-left font-extralight">
                 <p class="text-xs">
                     <a href="#" aria-label="Copyright" class="underline decoration-accent-light">Wojciech Skirło</a>
-                    {{ `&copy;` }} {{ year }}. Wszelkie prawa zastrzeżone.
+                    {{ "&copy;" }} {{ year }}. {{ $t("All rights reserved") }}.
                 </p>
             </div>
         </div>

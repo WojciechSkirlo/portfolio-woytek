@@ -42,19 +42,20 @@ const toggleInfo = (param: boolean = false) => {
                 >
                     <span
                         class="font-medium text-transparent bg-clip-text bg-gradient-to-l from-black via-accent to-black"
-                        >{{ item.name }}</span
                     >
+                        {{ item.name }}
+                    </span>
                 </div>
                 <div class="flex flex-col items-center gap-4">
                     <NuxtLink
                         v-if="item.hasOwnProperty('live') && item.live"
                         :href="item.live"
                         target="_blank"
-                        aria-label="Show live"
+                        :aria-label="$t('Show live')"
                         class="flex items-center group"
                     >
                         <span class="font-medium transition-colors duration-300 dark:text-dark-white">
-                            Sprawdź Live
+                            {{ $t("Show live") }}
                         </span>
                         <svg
                             class="ml-2 transition-colors duration-300 animate-bounce-right group-hover:animate-bounce-right-faster dark:fill-dark-white"
