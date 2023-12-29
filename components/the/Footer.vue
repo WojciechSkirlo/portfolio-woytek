@@ -1,49 +1,3 @@
-<template>
-    <footer id="contact" class="w-full text-white bg-black">
-        <div class="container flex flex-col px-4 mx-auto">
-            <div class="flex flex-col py-12 pb-6">
-                <BaseHeading left class="mb-12">Kontakt</BaseHeading>
-                
-                <!-- Contact -->
-                <div class="flex flex-col gap-5 mb-8">
-                    <div v-for="item in contact" :key="item.id" class="flex items-center text-sm font-extralight">
-                        <BaseIcon :name="item.icon" class="mr-4 text-white" bigger />
-                        <span class="pl-4 mr-1 uppercase border-l border-white">{{ item.key }}: </span>
-                        <a :href="item.link" aria-label="Contact" class="hover:underline">{{ item.value }}</a>
-                    </div>
-                </div>
-                
-                <!-- Social media -->
-                <div class="flex items-center gap-5 text-black">
-                    <NuxtLink
-                        v-for="item in socialMedia"
-                        :key="item.id"
-                        :to="item.link"
-                        target="_blank"
-                        class="flex items-center justify-center p-1 py-3.5 text-center bg-white relative group overflow-hidden"
-                        aria-label="Social medi"
-                    >
-                        <div
-                            class="absolute left-0 w-full h-full transition-all duration-500 bg-accent-light top-full group-hover:top-0"
-                        ></div>
-                        <svg
-                            class="relative z-10 w-[18px] h-[18px] fill-black"
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 448 512"
-                            v-html="item.icon"
-                        ></svg>
-                    </NuxtLink>
-                </div>
-            </div>
-            <div class="flex items-center justify-end h-12 text-left font-extralight">
-                <p class="text-xs">
-                    <a href="#" aria-label="Copyright" class="underline decoration-accent-light">Wojciech Skirło</a>
-                    {{ `&copy;` }} {{ year }}. Wszelkie prawa zastrzeżone.
-                </p>
-            </div>
-        </div>
-    </footer>
-</template>
 <script setup lang="ts">
 import * as HeroIcons from "@heroicons/vue/solid/index.js";
 import dayjs from "dayjs";
@@ -63,18 +17,20 @@ interface FooterSocialMedia {
     link: string;
 }
 
+const { t } = useI18n();
+
 const contact: Array<FooterContact> = [
     {
         id: 1,
         icon: "ChatAlt2Icon",
-        key: "Email",
+        key: t("footer.email"),
         value: "wojciechskiro@gmail.com",
         link: "mailto:wojciechskiro@gmail.com"
     },
     {
         id: 2,
         icon: "PhoneIcon",
-        key: "Nr tel",
+        key: t("footer.phoneNumber"),
         value: "+48 733-789-494",
         link: "tel:+48733789494"
     }
@@ -103,3 +59,50 @@ const socialMedia: Array<FooterSocialMedia> = [
 
 const year = computed(() => dayjs().year());
 </script>
+
+<template>
+    <footer id="contact" class="w-full text-white bg-black">
+        <div class="container flex flex-col px-4 mx-auto">
+            <div class="flex flex-col py-12 pb-6">
+                <BaseHeading left class="mb-12">{{ $t("footer.contact") }}</BaseHeading>
+
+                <!-- Contact -->
+                <div class="flex flex-col gap-5 mb-8">
+                    <div v-for="item in contact" :key="item.id" class="flex items-center text-sm font-extralight">
+                        <BaseIcon :name="item.icon" class="mr-4 text-white" bigger />
+                        <span class="pl-4 mr-1 uppercase border-l border-white">{{ item.key }}: </span>
+                        <a :href="item.link" aria-label="Contact" class="hover:underline">{{ item.value }}</a>
+                    </div>
+                </div>
+
+                <!-- Social media -->
+                <div class="flex items-center gap-5 text-black">
+                    <NuxtLink
+                        v-for="item in socialMedia"
+                        :key="item.id"
+                        :to="item.link"
+                        target="_blank"
+                        class="flex items-center justify-center p-1 py-3.5 text-center bg-white relative group overflow-hidden"
+                        aria-label="Social medi"
+                    >
+                        <div
+                            class="absolute left-0 w-full h-full transition-all duration-500 bg-accent-light top-full group-hover:top-0"
+                        ></div>
+                        <svg
+                            class="relative z-10 w-[18px] h-[18px] fill-black"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 448 512"
+                            v-html="item.icon"
+                        ></svg>
+                    </NuxtLink>
+                </div>
+            </div>
+            <div class="flex items-center justify-end h-12 text-left font-extralight">
+                <p class="text-xs">
+                    <a href="#" aria-label="Copyright" class="underline decoration-accent-light">Wojciech Skirło</a>
+                    {{ "&copy;" }} {{ year }}. {{ $t("footer.rights") }}.
+                </p>
+            </div>
+        </div>
+    </footer>
+</template>

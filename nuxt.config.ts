@@ -6,13 +6,10 @@ export default defineNuxtConfig({
             autoprefixer: {}
         }
     },
-
     imports: {
         dirs: ["ts"]
     },
-
-    modules: ["@kevinmarrec/nuxt-pwa"],
-
+    modules: ["@kevinmarrec/nuxt-pwa", "@nuxtjs/i18n"],
     pwa: {
         manifest: {
             id: "2",
@@ -44,6 +41,5 @@ export default defineNuxtConfig({
             source: "./public/android-chrome-192x192.png"
         }
     },
-
     css: ["~/assets/css/style.css"]
 });

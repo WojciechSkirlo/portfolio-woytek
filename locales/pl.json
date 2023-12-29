@@ -1,0 +1,47 @@
+{
+    "Hello! I'm": "Cześć! Jestem",
+    "scroll me": "przewiń w dół",
+    "Back to home page": "Back to home page",
+    "page not found": "strona nie została odnaleziona",
+    "Error": "Błąd",
+    "to": "to",
+    "up": "up",
+    "Menu": "Menu",
+    "Dark mode": "Tryb ciemny",
+    "on": "włączony",
+    "off": "wyłączony",
+    
+    "nav": {
+        "home": "Strona główna",
+        "aboutMe": "O mnie",
+        "portfolio": "Portfolio",
+        "contact": "Kontakt"
+    },
+    "portfolio": {
+        "header": "Portfolio",
+        "infoDesktop": "Najedź na pracę, aby poznać więcej szczegółów",
+        "infoMobile": "Naciśnij na pracę, aby poznać więcej szczegółów",
+        "showLive": "Pokaż na żywo"
+    },
+    "aboutMe": {
+        "header": "O mnie",
+        "title": "Trochę mojej historii",
+        "description": [
+            "Tak właściwie, nazywam się <b>{name}</b>. Mam {age} lat. Pochodzę z niewielkiej miejscowości położonej 60 km od Krakowa. Od najmłodszych lat interesuję się informatyką a w 2021 roku rozpocząłem naukę w Wyższej Szkole Ekonomii i Informatyki w Krakowie na kierunku informatyki stosowanej. Z każdym dniem wzbogacam się o nowe umiejętności, dzięki czemu potrafię coraz więcej. | Tak właściwie, nazywam się <b>{name}</b>. Mam {age} lata. Pochodzę z niewielkiej miejscowości położonej 60 km od Krakowa. Od najmłodszych lat interesuję się informatyką a w 2021 roku rozpocząłem naukę w Wyższej Szkole Ekonomii i Informatyki w Krakowie na kierunku informatyki stosowanej. Z każdym dniem wzbogacam się o nowe umiejętności, dzięki czemu potrafię coraz więcej.",
+            "Aktualnie pracuje jako <b>Frontend Developer</b>.  W wolnym czasie zajmuję się tworzeniem muzyki jak i jej wykonywaniem. Lubię spotykać się ze znajomymi, grać na instrumentach takich jak gitara czy pianino. Ogólnie to nie wyobrażam sobie świata bez muzyki."
+        ],
+        "timeline": [
+            "2020 - Pierwszy komercyjny projekt",
+            "2021 lip - Pierwsza praca jako Frontend developer w firmie Maal",
+            "2021 paź - Rozpoczęcie studiów na Wyższej Szkole Ekonomii i Informatyki w Krakowie",
+            "2023 lut - Nowa Praca w firmie Ideo",
+            "2023 paź - Mentor GoIT - Dziel się wiedzą, inspiruj przyszłość"
+        ]
+    },
+    "footer": {
+        "contact": "Kontakt",
+        "email": "Email",
+        "phoneNumber": "Numer telefonu",
+        "rights": "Wszelkie prawa zastrzeżone"
+    }
+}
