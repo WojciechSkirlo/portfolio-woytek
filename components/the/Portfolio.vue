@@ -67,12 +67,12 @@ const works: Array<Work> = [
 <template>
     <section id="portfolio" class="w-full transition-colors duration-300 bg-white dark:bg-dark-neutral">
         <BaseWrapper>
-            <BaseHeading center class="mb-8">{{ $t("Portfolio") }}</BaseHeading>
+            <BaseHeading center class="mb-8">{{ $t("portfolio.header") }}</BaseHeading>
             <p
                 class="px-12 mb-5 text-sm text-center transition-colors duration-300 font-extralight dark:text-dark-grey"
             >
-                <span class="hidden lg:inline">{{ $t("Hover over the work for more details") }}</span>
-                <span class="lg:hidden">{{ $t("Tap on the work for more details") }}</span>
+                <span class="hidden lg:inline">{{ $t("portfolio.infoDesktop") }}</span>
+                <span class="lg:hidden">{{ $t("portfolio.infoMobile") }}</span>
                 <BaseIcon name="CursorClickIcon" class="inline-block ml-2" />
             </p>
             <div class="flex flex-wrap justify-center w-full gap-5">

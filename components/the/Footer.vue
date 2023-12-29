@@ -23,14 +23,14 @@ const contact: Array<FooterContact> = [
     {
         id: 1,
         icon: "ChatAlt2Icon",
-        key: t("Email"),
+        key: t("footer.email"),
         value: "wojciechskiro@gmail.com",
         link: "mailto:wojciechskiro@gmail.com"
     },
     {
         id: 2,
         icon: "PhoneIcon",
-        key: t("Phone number"),
+        key: t("footer.phoneNumber"),
         value: "+48 733-789-494",
         link: "tel:+48733789494"
     }
@@ -64,7 +64,7 @@ const year = computed(() => dayjs().year());
     <footer id="contact" class="w-full text-white bg-black">
         <div class="container flex flex-col px-4 mx-auto">
             <div class="flex flex-col py-12 pb-6">
-                <BaseHeading left class="mb-12">{{ $t("Contact") }}</BaseHeading>
+                <BaseHeading left class="mb-12">{{ $t("footer.contact") }}</BaseHeading>
 
                 <!-- Contact -->
                 <div class="flex flex-col gap-5 mb-8">
@@ -100,7 +100,7 @@ const year = computed(() => dayjs().year());
             <div class="flex items-center justify-end h-12 text-left font-extralight">
                 <p class="text-xs">
                     <a href="#" aria-label="Copyright" class="underline decoration-accent-light">Wojciech Skirło</a>
-                    {{ "&copy;" }} {{ year }}. {{ $t("All rights reserved") }}.
+                    {{ "&copy;" }} {{ year }}. {{ $t("footer.rights") }}.
                 </p>
             </div>
         </div>

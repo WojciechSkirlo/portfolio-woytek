@@ -1,14 +1,12 @@
 import dayjs from "dayjs";
 
 export default (dateOfBirth: string) => {
-    const { t } = useI18n();
-
     const age = dayjs().diff(dateOfBirth, "years");
-    let suffix = "";
+    let plural = 0;
 
-    if (age === 1) suffix = t("rok");
-    else if ((age > 14 || age <= 4) && age % 10 >= 2 && age % 10 <= 4) suffix = t("lata");
-    else suffix = t("lat");
+    if (age === 1) plural = 0;
+    else if (age % 10 >= 2 && age % 10 <= 4 && (age % 100 < 10 || age % 100 >= 20)) plural = 2;
+    else plural = 1;
 
-    return `${age} ${suffix}`;
+    return { age, plural };
 };

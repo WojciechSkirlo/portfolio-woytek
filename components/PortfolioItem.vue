@@ -51,11 +51,11 @@ const toggleInfo = (param: boolean = false) => {
                         v-if="item.hasOwnProperty('live') && item.live"
                         :href="item.live"
                         target="_blank"
-                        :aria-label="$t('Show live')"
+                        :aria-label="$t('portfolio.showLive')"
                         class="flex items-center group"
                     >
                         <span class="font-medium transition-colors duration-300 dark:text-dark-white">
-                            {{ $t("Show live") }}
+                            {{ $t('portfolio.showLive') }}
                         </span>
                         <svg
                             class="ml-2 transition-colors duration-300 animate-bounce-right group-hover:animate-bounce-right-faster dark:fill-dark-white"

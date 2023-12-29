@@ -21,22 +21,22 @@ const isDarkMode = ref(false);
 const menu: Array<Menu> = [
     {
         id: 1,
-        name: t("Hello"),
+        name: t("nav.home"),
         link: "#hello"
     },
     {
         id: 2,
-        name: t("About me"),
+        name: t("nav.aboutMe"),
         link: "#about-me"
     },
     {
         id: 3,
-        name: t("Portfolio"),
+        name: t("nav.portfolio"),
         link: "#portfolio"
     },
     {
         id: 4,
-        name: t("Contact"),
+        name: t("nav.contact"),
         link: "#contact"
     }
 ];

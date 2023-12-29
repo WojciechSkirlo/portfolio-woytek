@@ -6,32 +6,42 @@
     "Error": "Error",
     "to": "to",
     "up": "up",
-    "Contact": "Contact",
     "Menu": "Menu",
     "Dark mode": "Dark mode",
     "on": "on",
     "off": "off",
-    "Hello": "Hello",
-    "About me": "About me",
-    "Portfolio": "Portfolio",
-    "Show live": "Show live",
-    "All rights reserved": "All rights reserved",
-    "Email": "Email",
-    "Phone number": "Phone number",
-    "Hover over the work for more details": "Hover over the work for more details",
-    "Tap on the work for more details": "Tap on the work for more details",
-    "A bit of my story": "A bit of my story",
-    "2020 - First commercial project": "2020 - First commercial project",
-    "2021 jul - First job as Frontend developer at Maal company": "2021 jul - First job as Frontend developer at Maal company",
-    "2021 oct - Starting studies at the Collage of Economics and Computer Science in Cracow": "2021 oct - Starting studies at the Collage of Economics and Computer Science in Cracow",
-    "2023 feb - New job at Ideo company": "2023 feb - New job at Ideo company",
-    "2023 oct - GoIT Mentor - Share knowledge, inspire the future": "2023 oct - GoIT Mentor - Share knowledge, inspire the future",
-    "I am currently working as a": "I am currently working as a",
-    "In my free time I am involved in creating music as well as performing it. I enjoy hanging out with friends, playing instruments such as guitar and piano. In general, I can't imagine the world without music.": "In my free time I am involved in creating music as well as performing it. I enjoy hanging out with friends, playing instruments such as guitar and piano. In general, I can't imagine the world without music.",
-    "I come from a small town 60 km from Cracow. From an early age, I have been interested in computer science and in 2021 I started studying applied computer science at the Collage of Economics and Computer Science in Cracow. Every day I enrich myself with new skills, so I can do more and more.": "I come from a small town 60 km from Cracow. From an early age, I have been interested in computer science and in 2021 I started studying applied computer science at the Collage of Economics and Computer Science in Cracow. Every day I enrich myself with new skills, so I can do more and more.",
-    "Actually, my name is": "Actually, my name is",
-    "I'm": "I'm",
-    "rok": "year old",
-    "lat": "years old",
-    "lata": "years old"
+    
+    "nav": {
+        "home": "Home",
+        "aboutMe": "About me",
+        "portfolio": "Portfolio",
+        "contact": "Contact"
+    },
+    "portfolio": {
+        "header": "Portfolio",
+        "infoDesktop": "Hover over the work for more details",
+        "infoMobile": "Tap on the work for more details",
+        "showLive": "Show live"
+    },
+    "aboutMe": {
+        "header": "About me",
+        "title": "A bit of my story",
+        "description": [
+            "Actually, my name is <b>{name}</b>. I'm {age} years old. I come from a small town 60 km from Cracow. From an early age, I have been interested in computer science and in 2021 I started studying applied computer science at the Collage of Economics and Computer Science in Cracow. Every day I enrich myself with new skills, so I can do more and more.",
+            "I am currently working as a <b>Frontend Developer</b>. In my free time I am involved in creating music as well as performing it. I enjoy hanging out with friends, playing instruments such as guitar and piano. In general, I can't imagine the world without music."
+        ],
+        "timeline": [
+            "2020 - First commercial project",
+            "2021 jul - First job as Frontend developer at Maal company",
+            "2021 oct - Starting studies at the Collage of Economics and Computer Science in Cracow",
+            "2023 feb - New job at Ideo company",
+            "2023 oct - GoIT Mentor - Share knowledge, inspire the future"
+        ]
+    },
+    "footer": {
+        "contact": "Contact",
+        "email": "Email",
+        "phoneNumber": "Phone number",
+        "rights": "All rights reserved"
+    }
 }

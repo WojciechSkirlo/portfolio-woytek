@@ -13,24 +13,20 @@ interface TimeLine {
 }
 
 const { t } = useI18n();
+const birthDate = "2001-10-20";
+const age = getAge(birthDate);
 
 const aboutMe: AboutMe = {
-    header: t("About me"),
-    title: t("A bit of my story"),
+    header: t("aboutMe.header"),
+    title: t("aboutMe.title"),
     description: [
         {
             id: 1,
-            paragraph: `${t("Actually, my name is")} <b>Skirło Wojciech</b>. ${t("I'm")} ${getAge("2001-10-20")}.
-            ${t(
-                "I come from a small town 60 km from Cracow. From an early age, I have been interested in computer science and in 2021 I started studying applied computer science at the Collage of Economics and Computer Science in Cracow. Every day I enrich myself with new skills, so I can do more and more."
-            )}`
+            paragraph: t("aboutMe.description[0]", { name: "Skirło Wojciech", age: age.age }, { plural: age.plural })
         },
         {
             id: 2,
-            paragraph: `${t("I am currently working as a")} <b>Frontend Developer</b>. 
-            ${t(
-                "In my free time I am involved in creating music as well as performing it. I enjoy hanging out with friends, playing instruments such as guitar and piano. In general, I can't imagine the world without music."
-            )}`
+            paragraph: t("aboutMe.description[1]")
         }
     ],
     quote: "Music is the wine that fills the cup of silence",
@@ -40,23 +36,23 @@ const aboutMe: AboutMe = {
 const timeLine: Array<TimeLine> = [
     {
         id: 1,
-        description: t("2020 - First commercial project")
+        description: t("aboutMe.timeline[0]")
     },
     {
         id: 2,
-        description: t("2021 jul - First job as Frontend developer at Maal company")
+        description: t("aboutMe.timeline[1]")
     },
     {
         id: 3,
-        description: t("2021 oct - Starting studies at the Collage of Economics and Computer Science in Cracow")
+        description: t("aboutMe.timeline[2]")
     },
     {
         id: 4,
-        description: t("2023 feb - New job at Ideo company")
+        description: t("aboutMe.timeline[3]")
     },
     {
         id: 5,
-        description: t("2023 oct - GoIT Mentor - Share knowledge, inspire the future")
+        description: t("aboutMe.timeline[4]")
     }
 ];
 </script>
