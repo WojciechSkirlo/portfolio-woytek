@@ -1,21 +1,23 @@
 {
-    "Hello! I'm": "Cześć! Jestem",
-    "scroll me": "przewiń w dół",
     "Back to home page": "Back to home page",
     "page not found": "strona nie została odnaleziona",
     "Error": "Błąd",
     "to": "to",
     "up": "up",
-    "Menu": "Menu",
     "Dark mode": "Tryb ciemny",
     "on": "włączony",
     "off": "wyłączony",
-    
+
+    "header": {
+        "title": "Cześć! Jestem",
+        "scroll": "przewiń w dół"
+    },
     "nav": {
         "home": "Strona główna",
         "aboutMe": "O mnie",
         "portfolio": "Portfolio",
-        "contact": "Kontakt"
+        "contact": "Kontakt",
+        "menu": "Menu"
     },
     "portfolio": {
         "header": "Portfolio",

@@ -1,21 +1,23 @@
 {
-    "Hello! I'm": "Hello! I'm",
-    "scroll me": "scroll me",
     "Back to home page": "Back to home page",
     "page not found": "page not found",
     "Error": "Error",
     "to": "to",
     "up": "up",
-    "Menu": "Menu",
     "Dark mode": "Dark mode",
     "on": "on",
     "off": "off",
-    
+
+    "header": {
+        "title": "Hello! I'm",
+        "scroll": "scroll me"
+    },
     "nav": {
         "home": "Home",
         "aboutMe": "About me",
         "portfolio": "Portfolio",
-        "contact": "Contact"
+        "contact": "Contact",
+        "menu": "Menu"
     },
     "portfolio": {
         "header": "Portfolio",

@@ -13,12 +13,13 @@ interface Contact {
 }
 
 const { t } = useI18n();
+const switchLocalePath = useSwitchLocalePath();
 
 const isMenu = ref(false);
 const isBackgroundMenu = ref(false);
 const isDarkMode = ref(false);
 
-const menu: Array<Menu> = [
+const menu = computed<Array<Menu>>(() => [
     {
         id: 1,
         name: t("nav.home"),
@@ -39,9 +40,9 @@ const menu: Array<Menu> = [
         name: t("nav.contact"),
         link: "#contact"
     }
-];
+]);
 
-const contact: Array<Contact> = [
+const contact = computed<Array<Contact>>(() => [
     {
         id: 1,
         name: "GitHub",
@@ -60,7 +61,7 @@ const contact: Array<Contact> = [
                 d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
               />`
     }
-];
+]);
 
 const toggleMenu = () => {
     setTimeout(() => {
@@ -117,11 +118,12 @@ onMounted(() => {
 
 <template>
     <div>
+        <!-- Desktop -->
         <div
             class="fixed top-0 left-0 z-40 items-center justify-end hidden w-full transition-colors duration-500 lg:flex"
             :class="isBackgroundMenu && ['bg-white/70', 'dark:bg-dark-neutral/70', 'backdrop-blur-md']"
         >
-            <div class="flex items-center gap-6">
+            <div class="flex items-center gap-5">
                 <nav>
                     <ul class="flex gap-4 py-4">
                         <li v-for="item in menu" :key="item.id">
@@ -137,6 +139,14 @@ onMounted(() => {
                         </li>
                     </ul>
                 </nav>
+                <div class="flex gap-2 dark:text-white">
+                    <NuxtLink :to="switchLocalePath('en')" active-class="underline" class="hover:underline">
+                        EN
+                    </NuxtLink>
+                    <NuxtLink :to="switchLocalePath('pl')" active-class="underline" class="hover:underline">
+                        PL
+                    </NuxtLink>
+                </div>
                 <BaseSwitch v-model="isDarkMode" />
                 <div class="flex h-16 gap-4">
                     <NuxtLink
@@ -145,7 +155,7 @@ onMounted(() => {
                         :to="item.link"
                         target="_blank"
                         class="flex items-center justify-center h-16 group"
-                        :aria-label="$t('Contact')"
+                        :aria-label="$t('nav.contact')"
                     >
                         <svg
                             class="w-4 h-4 fill-black"
@@ -158,13 +168,15 @@ onMounted(() => {
                     <NuxtLink
                         href="mailto:wojciechskiro@gmail.com"
                         class="flex items-center justify-center w-16 h-16 bg-black"
-                        :aria-label="$t('Contact')"
+                        :aria-label="$t('nav.contact')"
                     >
                         <BaseIcon name="PaperAirplaneIcon" class="text-white rotate-45" bigger />
                     </NuxtLink>
                 </div>
             </div>
         </div>
+
+        <!-- Mobile -->
         <div class="lg:hidden" id="header" v-click-outside="hideMenu">
             <div
                 class="fixed top-0 right-0 z-40 items-center w-full transition-all duration-500"
@@ -208,14 +220,23 @@ onMounted(() => {
                             {{ $t("Dark mode") }} {{ isDarkMode ? $t("on") : $t("off") }}
                         </span>
                     </div>
-                    <nav class="flex flex-col p-6 px-8">
+                    <nav class="flex flex-col px-5 py-1">
+                        <div class="flex gap-2 mb-5 dark:text-white">
+                            <NuxtLink :to="switchLocalePath('en')" active-class="underline" class="hover:underline">
+                                EN
+                            </NuxtLink>
+                            <NuxtLink :to="switchLocalePath('pl')" active-class="underline" class="hover:underline">
+                                PL
+                            </NuxtLink>
+                        </div>
+
                         <!-- Menu -->
                         <h3
-                            class="mb-6 text-sm font-semibold uppercase transition-colors duration-300 dark:text-dark-white"
+                            class="mb-4 text-sm font-semibold uppercase transition-colors duration-300 dark:text-dark-white"
                         >
-                            {{ $t("Menu") }}
+                            {{ $t("nav.menu") }}
                         </h3>
-                        <ul class="ml-2">
+                        <ul>
                             <li
                                 v-for="item in menu"
                                 :key="item.id"
@@ -233,11 +254,11 @@ onMounted(() => {
 
                         <!-- Contact -->
                         <h3
-                            class="mt-10 mb-6 text-sm font-semibold uppercase transition-colors duration-300 dark:text-dark-white"
+                            class="mt-6 mb-4 text-sm font-semibold uppercase transition-colors duration-300 dark:text-dark-white"
                         >
-                            {{ $t("Contact") }}
+                            {{ $t("nav.contact") }}
                         </h3>
-                        <ul class="flex flex-col items-start ml-2">
+                        <ul class="flex flex-col items-start">
                             <li
                                 v-for="item in contact"
                                 :key="item.id"
@@ -246,7 +267,7 @@ onMounted(() => {
                                 <NuxtLink
                                     :to="item.link"
                                     target="_blank"
-                                    aria-label="Contact"
+                                    :aria-label="$t('nav.contact')"
                                     class="px-4 py-1.5 bg-accent-light rounded dark:text-dark-neutral transition-colors duration-300 font-medium flex justify-start leading-4 gap-2 items-center text-sm"
                                 >
                                     <span>

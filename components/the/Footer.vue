@@ -19,7 +19,7 @@ interface FooterSocialMedia {
 
 const { t } = useI18n();
 
-const contact: Array<FooterContact> = [
+const contact = computed<Array<FooterContact>>(() => [
     {
         id: 1,
         icon: "ChatAlt2Icon",
@@ -34,9 +34,9 @@ const contact: Array<FooterContact> = [
         value: "+48 733-789-494",
         link: "tel:+48733789494"
     }
-];
+]);
 
-const socialMedia: Array<FooterSocialMedia> = [
+const socialMedia = computed<Array<FooterSocialMedia>>(() => [
     {
         id: 1,
         name: "LinkedIn",
@@ -55,7 +55,7 @@ const socialMedia: Array<FooterSocialMedia> = [
               />`,
         link: "https://github.com/WojciechSkirlo"
     }
-];
+]);
 
 const year = computed(() => dayjs().year());
 </script>
