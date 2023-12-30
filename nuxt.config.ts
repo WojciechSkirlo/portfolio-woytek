@@ -10,6 +10,11 @@ export default defineNuxtConfig({
         dirs: ["ts"]
     },
     modules: ["@kevinmarrec/nuxt-pwa", "@nuxtjs/i18n"],
+    i18n: {
+        locales: ["en", "pl"],
+        defaultLocale: "en",
+        strategy: "prefix"
+    },
     pwa: {
         manifest: {
             id: "2",

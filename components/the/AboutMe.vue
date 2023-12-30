@@ -16,7 +16,7 @@ const { t } = useI18n();
 const birthDate = "2001-10-20";
 const age = getAge(birthDate);
 
-const aboutMe: AboutMe = {
+const aboutMe = computed<AboutMe>(() => ({
     header: t("aboutMe.header"),
     title: t("aboutMe.title"),
     description: [
@@ -31,9 +31,9 @@ const aboutMe: AboutMe = {
     ],
     quote: "Music is the wine that fills the cup of silence",
     authorOfQuote: "Robert Fripp"
-};
+}));
 
-const timeLine: Array<TimeLine> = [
+const timeLine = computed<Array<TimeLine>>(() => [
     {
         id: 1,
         description: t("aboutMe.timeline[0]")
@@ -54,7 +54,7 @@ const timeLine: Array<TimeLine> = [
         id: 5,
         description: t("aboutMe.timeline[4]")
     }
-];
+]);
 </script>
 
 <template>
