@@ -1,6 +1,24 @@
 export {};
 
-type Technology = "html" | "css" | "sass" | "tailwindcss" | "js" | "ts" | "vue" | "nuxt" | "jquery" | "php" | "pwa" | "react";
+type Technology =
+    | "html"
+    | "css"
+    | "sass"
+    | "tailwindcss"
+    | "js"
+    | "ts"
+    | "vue"
+    | "nuxt"
+    | "jquery"
+    | "php"
+    | "pwa"
+    | "react"
+    | "react native"
+    | "expo"
+    | "node.js"
+    | "express"
+    | "socket.io"
+    | "mongodb"
 
 declare global {
     interface Work {

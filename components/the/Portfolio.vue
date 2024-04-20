@@ -18,20 +18,28 @@ const works: Array<Work> = [
     },
     {
         id: 3,
+        name: "iThread",
+        img: "thumbnail-ithread.png",
+        live: "https://expo.dev//accounts/woytek01/projects/ithread/builds/5ef57a15-6371-42f3-a01a-9d6504675d0b",
+        github: "https://github.com/WojciechSkirlo/ithread",
+        techStack: ["react native", "expo", "ts", "node.js", "express", "socket.io", "mongodb"]
+    },
+    {
+        id: 4,
         name: "projectq12",
         img: "thumbnail-projectq12.png",
         github: "https://github.com/WojciechSkirlo/projectq12",
         techStack: ["html", "css", "js", "jquery", "php"]
     },
     {
-        id: 4,
+        id: 5,
         name: "gmw-spaw",
         img: "thumbnail-gmwspaw.png",
         live: "https://gmw-spaw.com/",
         techStack: ["html", "css", "sass", "js", "jquery", "php"]
     },
     {
-        id: 5,
+        id: 6,
         name: "Caesar cipher",
         img: "thumbnail-cc.png",
         live: "https://voluble-snickerdoodle-37831a.netlify.app/",
@@ -39,7 +47,7 @@ const works: Array<Work> = [
         techStack: ["html", "css", "tailwindcss", "ts", "vue", "pwa"]
     },
     {
-        id: 6,
+        id: 7,
         name: "emulator intel 8086",
         img: "thumbnail-portfolio.png",
         live: "https://merry-granita-33b312.netlify.app/",
@@ -47,20 +55,13 @@ const works: Array<Work> = [
         techStack: ["html", "css", "tailwindcss", "js", "vue"]
     },
     {
-        id: 7,
+        id: 8,
         name: "warszawa45",
         img: "thumbnail-warszawa45.png",
         live: "https://wojciechskirlo.github.io/warszawa45/",
         github: "https://github.com/WojciechSkirlo/warszawa45",
         techStack: ["html", "css", "sass", "js", "jquery"]
     },
-    {
-        id: 8,
-        name: "najmcar",
-        img: "thumbnail-najmcar.png",
-        live: "http://najmcar.pl/",
-        techStack: ["html", "css", "sass", "jquery"]
-    }
 ];
 </script>
 
