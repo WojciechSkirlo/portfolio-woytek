@@ -27,13 +27,6 @@ const contact = computed<Array<FooterContact>>(() => [
         value: "wojciechskiro@gmail.com",
         link: "mailto:wojciechskiro@gmail.com"
     },
-    {
-        id: 2,
-        icon: "PhoneIcon",
-        key: t("footer.phoneNumber"),
-        value: "+48 733-789-494",
-        link: "tel:+48733789494"
-    }
 ]);
 
 const socialMedia = computed<Array<FooterSocialMedia>>(() => [
