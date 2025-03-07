@@ -19,6 +19,7 @@ type Technology =
     | "express"
     | "socket.io"
     | "mongodb"
+    | "next.js"
 
 declare global {
     interface Work {

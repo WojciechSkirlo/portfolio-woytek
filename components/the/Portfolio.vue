@@ -2,6 +2,13 @@
 const works: Array<Work> = [
     {
         id: 1,
+        name: "Festivente",
+        img: "thumbnail-festivente.svg",
+        live: "https://festivente-client.netlify.app/",
+        techStack: ["next.js", "react", "sass", "ts", "node.js", "express", "mongodb"]
+    },
+    {
+        id: 2,
         name: "spotify-clone",
         img: "thumbnail-spotify-clone.png",
         github: "https://github.com/spotify-copy-app/spotify-clone",
@@ -9,7 +16,7 @@ const works: Array<Work> = [
         techStack: ["html", "css", "tailwindcss", "ts", "react"]
     },
     {
-        id: 2,
+        id: 3,
         name: "check messages",
         img: "thumbnail-check-messages.png",
         live: "https://resplendent-sunflower-035ed8.netlify.app/",
@@ -17,7 +24,7 @@ const works: Array<Work> = [
         techStack: ["html", "css", "tailwindcss", "ts", "vue"]
     },
     {
-        id: 3,
+        id: 4,
         name: "iThread",
         img: "thumbnail-ithread.png",
         live: "https://expo.dev//accounts/woytek01/projects/ithread/builds/5ef57a15-6371-42f3-a01a-9d6504675d0b",
@@ -25,34 +32,26 @@ const works: Array<Work> = [
         techStack: ["react native", "expo", "ts", "node.js", "express", "socket.io", "mongodb"]
     },
     {
-        id: 4,
+        id: 5,
         name: "projectq12",
         img: "thumbnail-projectq12.png",
         github: "https://github.com/WojciechSkirlo/projectq12",
         techStack: ["html", "css", "js", "jquery", "php"]
     },
     {
-        id: 5,
+        id: 6,
         name: "gmw-spaw",
         img: "thumbnail-gmwspaw.png",
         live: "https://gmw-spaw.com/",
         techStack: ["html", "css", "sass", "js", "jquery", "php"]
     },
     {
-        id: 6,
+        id: 7,
         name: "Caesar cipher",
         img: "thumbnail-cc.png",
         live: "https://voluble-snickerdoodle-37831a.netlify.app/",
         github: "https://github.com/WojciechSkirlo/caesar-cipher",
         techStack: ["html", "css", "tailwindcss", "ts", "vue", "pwa"]
-    },
-    {
-        id: 7,
-        name: "emulator intel 8086",
-        img: "thumbnail-portfolio.png",
-        live: "https://merry-granita-33b312.netlify.app/",
-        github: "https://github.com/WojciechSkirlo/architecture-of-computer-systems-project",
-        techStack: ["html", "css", "tailwindcss", "js", "vue"]
     },
     {
         id: 8,

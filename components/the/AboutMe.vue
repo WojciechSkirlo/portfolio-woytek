@@ -53,13 +53,21 @@ const timeLine = computed<Array<TimeLine>>(() => [
     {
         id: 5,
         description: t("aboutMe.timeline[4]")
+    },
+    {
+        id: 6,
+        description: t("aboutMe.timeline[5]")
+    },
+    {
+        id: 7,
+        description: t("aboutMe.timeline[6]")
     }
 ]);
 </script>
 
 <template>
     <section id="about-me" class="w-full transition-colors duration-300 bg-white dark:bg-dark-neutral">
-        <BaseWrapper class="items-center gap-10 lg:gap-14 md:flex-row">
+        <BaseWrapper class="items-center gap-10 md:flex-row">
             <div class="relative flex flex-col flex-1">
                 <div
                     class="absolute right-0 w-24 h-24 rounded-full -top-2 animation-move bg-gradient-to-br from-accent/70 via-accent-light/70 to-white backdrop-blur-md"
